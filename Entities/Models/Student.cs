@@ -24,7 +24,27 @@ namespace Entities.Models
         public int CityID { get; set; }
         public City City { get; set; }
 
-        public ICollection<Lesson> Lessons { get; set; }
+
+        [ForeignKey(nameof(Department))]
+        public int DepartmentID { get; set; }
+        public Department Department { get; set; }
+
+        // Optional 
+        [ForeignKey(nameof(Parent))]
+        public int? ParentID { get; set; }
+        public Parent Parent { get; set; }
+
+         
+        [ForeignKey(nameof(AcademicYear))]
+        public int? AcademicYearID { get; set; }
+        public AcademicYear AcademicYear { get; set; }
+
+        // Optional 
+        [ForeignKey(nameof(Term))]
+        public int? TermID { get; set; }
+        public Term Term { get; set; }
+
+        //public ICollection<Lesson> Lessons { get; set; }
         public ICollection<HomeworkSubmission> HomeworkSubmissions { get; set; }
         public ICollection<Attendance> Attendances { get; set; }
         public ICollection<Grade> Grades { get; set; }

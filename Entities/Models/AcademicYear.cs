@@ -17,5 +17,7 @@ namespace Entities.Models
         public ICollection<StudentClass> StudentClasses { get; set; }
         public ICollection<Class> Classes { get; set; }
         public ICollection<Term> Terms { get; set; }
+
+        public ICollection<Student> Students { get; set; }
     }
 }
