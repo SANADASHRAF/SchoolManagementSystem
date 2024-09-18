@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -26,5 +27,7 @@ namespace Entities.Models
         [ForeignKey(nameof(Year))]
         public int YearID { get; set; }
         public AcademicYear Year { get; set; }
+
+        
     }
 }

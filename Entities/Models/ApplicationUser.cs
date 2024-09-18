@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Models
 {
-    public class ApplicationUser /*: IdentityUser*/ 
+    public class ApplicationUser : IdentityUser
     {
         [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }

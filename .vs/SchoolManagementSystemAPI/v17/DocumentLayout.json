@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F094DFF7-07BB-41F1-B160-AC1C03979FEB}|SchoolManagementSystemAPI\\SchoolManagementSystemAPI.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi\\contextfactory\\repositorycontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F094DFF7-07BB-41F1-B160-AC1C03979FEB}|SchoolManagementSystemAPI\\SchoolManagementSystemAPI.csproj|solutionrelative:schoolmanagementsystemapi\\contextfactory\\repositorycontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{496767BB-2506-4DC6-9B7B-49D29D8858D5}|Entities\\Entities.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\entities\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{496767BB-2506-4DC6-9B7B-49D29D8858D5}|Entities\\Entities.csproj|solutionrelative:entities\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\repository\\repositorycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|solutionrelative:repository\\repositorycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,45 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RepositoryContextFactory.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\ContextFactory\\RepositoryContextFactory.cs",
-              "RelativeDocumentMoniker": "SchoolManagementSystemAPI\\ContextFactory\\RepositoryContextFactory.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\ContextFactory\\RepositoryContextFactory.cs",
-              "RelativeToolTip": "SchoolManagementSystemAPI\\ContextFactory\\RepositoryContextFactory.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwA4AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T22:25:49.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "Entities\\Models\\ApplicationUser.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "Entities\\Models\\ApplicationUser.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBIAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T21:16:08.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RepositoryContext.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\RepositoryContext.cs",
-              "RelativeDocumentMoniker": "Repository\\RepositoryContext.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\RepositoryContext.cs",
-              "RelativeToolTip": "Repository\\RepositoryContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T21:07:18.434Z",
-              "EditorCaption": ""
             }
           ]
         }

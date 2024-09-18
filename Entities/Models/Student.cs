@@ -41,5 +41,6 @@ namespace Entities.Models
         public ICollection<Attendance> Attendances { get; set; }
         public ICollection<Grade> Grades { get; set; }
         public ICollection<StudentClass> StudentClasses { get; set; }
+        public ICollection<ExamSubmission> ExamSubmissions { get; set; }
     }
 }

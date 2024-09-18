@@ -26,5 +26,7 @@ namespace Entities.Models
         [ForeignKey(nameof(Student))]
         public int StudentID { get; set; }
         public Student Student { get; set; }
+
+
     }
 }

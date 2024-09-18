@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class RepositoryContext :DbContext /*: IdentityDbContext<ApplicationUser>*/
+    public class RepositoryContext : IdentityDbContext<ApplicationUser>
     {
         public RepositoryContext(DbContextOptions options)
         : base(options)
@@ -42,5 +42,23 @@ namespace Repository
         public DbSet<StudentClass> StudentClasses { get; set; }
         public DbSet<Term> Terms { get; set; }
         public DbSet<TuitionPayments> TuitionPayments { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Apply 'Restrict' behavior to all relationships by default
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var foreignKey in entityType.GetForeignKeys())
+                {
+                    foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+                }
+            }
+
+           
+        }
+
     }
 }
