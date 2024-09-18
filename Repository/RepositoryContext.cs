@@ -43,11 +43,11 @@ namespace Repository
         public DbSet<Term> Terms { get; set; }
         public DbSet<TuitionPayments> TuitionPayments { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            // Apply 'Restrict' behavior to all relationships by default
             // Apply 'Restrict' behavior to all relationships by default
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
