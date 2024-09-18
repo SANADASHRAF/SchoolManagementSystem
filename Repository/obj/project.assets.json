@@ -316,6 +316,19 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
       }
     }
   },
@@ -807,11 +820,17 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.8"
+      "Entities >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 8.0.8"
     ]
   },
   "packageFolders": {
@@ -821,11 +840,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\Entities.csproj",
-      "projectName": "Entities",
-      "projectPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\Entities.csproj",
+      "projectUniqueName": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\Repository.csproj",
+      "projectName": "Repository",
+      "projectPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\top\\.nuget\\packages\\",
-      "outputPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\obj\\",
+      "outputPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -846,7 +865,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\Entities.csproj": {
+              "projectPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -864,7 +887,7 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+          "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.8, )"
           }

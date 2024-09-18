@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Models
 {
-    public class ApplicationUser : IdentityUser 
+    public class ApplicationUser /*: IdentityUser*/ 
     {
         [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }
