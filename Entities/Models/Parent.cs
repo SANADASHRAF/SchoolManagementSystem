@@ -18,6 +18,6 @@ namespace Entities.Models
         public ApplicationUser User { get; set; }
 
         // Relationships
-        public ICollection<Student> Children { get; set; }
+        public ICollection<Student>? Students { get; set; }
     }
 }

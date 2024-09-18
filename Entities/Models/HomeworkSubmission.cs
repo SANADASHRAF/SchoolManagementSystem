@@ -12,8 +12,11 @@ namespace Entities.Models
     {
         [Key]
         public int HomeworkSubmissionID { get; set; }
+
+        [Required(ErrorMessage = "Submission date is required.")]
         public DateTime SubmissionDate { get; set; }
-        public string FilePath { get; set; }
+
+        public string? Comments { get; set; } 
 
         [ForeignKey(nameof(Homework))]
         public int HomeworkID { get; set; }

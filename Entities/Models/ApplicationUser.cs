@@ -10,20 +10,19 @@ namespace Entities.Models
 {
     public class ApplicationUser : IdentityUser 
     {
-        
-        [Required]
-        public string? Name { get; set; }
+        [Required(ErrorMessage = "Name is required.")]
+        public string Name { get; set; }
 
-        [Required]
-        public string? Address { get; set; }
+        [Required(ErrorMessage = "Address is required.")]
+        public string Address { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Date of birth is required.")]
         public DateTime DateOfBirth { get; set; }
-       
-        [Required]
-        public string? Gender { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Gender is required.")]
+        public string Gender { get; set; }
+
+        [Required(ErrorMessage = "Enrollment date is required.")]
         public DateTime EnrollmentDate { get; set; }
 
     }

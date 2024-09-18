@@ -12,12 +12,17 @@ namespace Entities.Models
     {
         [Key]
         public int AttendanceID { get; set; }
+
+        [Required(ErrorMessage = "Date is required.")]
         public DateTime Date { get; set; }
+
+        [Required(ErrorMessage = "IsPresent is required.")]
         public bool IsPresent { get; set; }
+
 
         // Relationships
         [ForeignKey(nameof(Student))]
-        public string StudentID { get; set; }
+        public int StudentID { get; set; }
         public Student Student { get; set; }
     }
 }

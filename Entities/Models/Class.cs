@@ -12,16 +12,21 @@ namespace Entities.Models
     {
         [Key]
         public int ClassID { get; set; }
+
+        [Required(ErrorMessage = "Class name is required.")]
         public string ClassName { get; set; }
+
+        public string Description { get; set; } 
 
         // Relationships
 
         [ForeignKey(nameof(Year))]
+        [Required(ErrorMessage = "Year ID is required.")]
         public int YearID { get; set; }
         public AcademicYear Year { get; set; }
-   
+
         public ICollection<StudentClass> StudentClasses { get; set; }
-        //public ICollection<Subject> Subjects { get; set; }
-        //public ICollection<ClassSchedule> Schedules { get; set; }
+        public ICollection<Subject> Subjects { get; set; }
+        public ICollection<ClassSchedule> Schedules { get; set; }
     }
 }

@@ -9,15 +9,22 @@ namespace Entities.Models
 {
     public class AcademicYear
     {
+
         [Key]
         public int YearID { get; set; }
+
+        [Required(ErrorMessage = "Year name is required.")]
         public string YearName { get; set; }
 
-        // Relationships
-        public ICollection<StudentClass> StudentClasses { get; set; }
-        public ICollection<Class> Classes { get; set; }
-        public ICollection<Term> Terms { get; set; }
+        [Required(ErrorMessage = "Start date is required.")]
+        public DateTime StartDate { get; set; }
 
-        public ICollection<Student> Students { get; set; }
+        [Required(ErrorMessage = "End date is required.")]
+        public DateTime EndDate { get; set; }
+
+        // Relationships
+        public ICollection<StudentClass>? StudentClasses { get; set; }
+        public ICollection<Class>? Classes { get; set; }
+
     }
 }

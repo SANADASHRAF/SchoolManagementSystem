@@ -32,17 +32,9 @@ namespace Entities.Models
         // Optional 
         [ForeignKey(nameof(Parent))]
         public int? ParentID { get; set; }
-        public Parent Parent { get; set; }
+        public Parent? Parent { get; set; }
 
          
-        [ForeignKey(nameof(AcademicYear))]
-        public int? AcademicYearID { get; set; }
-        public AcademicYear AcademicYear { get; set; }
-
-        // Optional 
-        [ForeignKey(nameof(Term))]
-        public int? TermID { get; set; }
-        public Term Term { get; set; }
 
         //public ICollection<Lesson> Lessons { get; set; }
         public ICollection<HomeworkSubmission> HomeworkSubmissions { get; set; }

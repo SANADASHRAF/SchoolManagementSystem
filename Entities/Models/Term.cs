@@ -12,15 +12,22 @@ namespace Entities.Models
     {
         [Key]
         public int TermID { get; set; }
+
+        [Required(ErrorMessage = "Term name is required.")]
         public string TermName { get; set; }
+
+        [Required(ErrorMessage = "Start date is required.")]
         public DateTime StartDate { get; set; }
+
+        [Required(ErrorMessage = "End date is required.")]
         public DateTime EndDate { get; set; }
 
+        // Relationships
+        public ICollection<AcademicYear> AcademicYears { get; set; }
+        public ICollection<Exam> Exams { get; set; }
 
-        [ForeignKey(nameof(Year))]
-        public int YearID { get; set; }
-        public AcademicYear Year { get; set; }
 
-        public ICollection<Student> Students { get; set; }
+
+
     }
 }
