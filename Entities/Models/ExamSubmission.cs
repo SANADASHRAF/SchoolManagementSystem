@@ -22,6 +22,8 @@ namespace Entities.Models
         public int ExamID { get; set; }
         public Exam Exam { get; set; }
 
+        public string? ExamSubmissionUrlFilePath { get; set; }
+        public string? ExamSubmissionUrlImagPath { get; set; }
 
         [ForeignKey(nameof(Student))]
         public int StudentID { get; set; }

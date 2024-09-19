@@ -12,8 +12,8 @@ using Repository;
 namespace SchoolManagementSystemAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240918231632_DatabaseCreation")]
-    partial class DatabaseCreation
+    [Migration("20240919121631_DB5")]
+    partial class DB5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,6 +98,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CityID")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -158,6 +161,8 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CityID");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -177,6 +182,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AttendanceID"));
 
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -186,9 +194,16 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
+                    b.Property<int>("TeacherID")
+                        .HasColumnType("int");
+
                     b.HasKey("AttendanceID");
 
+                    b.HasIndex("AcademicYearID");
+
                     b.HasIndex("StudentID");
+
+                    b.HasIndex("TeacherID");
 
                     b.ToTable("Attendances");
                 });
@@ -293,13 +308,39 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.ToTable("Departments");
                 });
 
+            modelBuilder.Entity("Entities.Models.EventVideo", b =>
+                {
+                    b.Property<long>("EventVideoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EventVideoId"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("EventId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("VideoID")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("EventVideoId");
+
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("VideoID");
+
+                    b.ToTable("eventVideos");
+                });
+
             modelBuilder.Entity("Entities.Models.Events", b =>
                 {
-                    b.Property<int>("EventID")
+                    b.Property<long>("EventID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EventID"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -314,6 +355,32 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.HasKey("EventID");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("Entities.Models.EventsImage", b =>
+                {
+                    b.Property<long>("EventsImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EventsImageId"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("EventId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ImageId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("EventsImageId");
+
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("ImageId");
+
+                    b.ToTable("eventsImages");
                 });
 
             modelBuilder.Entity("Entities.Models.Exam", b =>
@@ -335,6 +402,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.Property<string>("ExamName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamUrlFilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamUrlImagPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SubjectID")
@@ -362,6 +435,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.Property<int>("ExamID")
                         .HasColumnType("int");
+
+                    b.Property<string>("ExamSubmissionUrlFilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamSubmissionUrlImagPath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
@@ -422,6 +501,12 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HomeworkUrlFilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HomeworkUrlImagPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("HomeworkID");
 
                     b.ToTable("Homeworks");
@@ -441,6 +526,12 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("HomeworkID")
                         .HasColumnType("int");
 
+                    b.Property<string>("HomeworkSubmissionUrlFilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HomeworkSubmissionUrlImagPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
@@ -458,11 +549,11 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Image", b =>
                 {
-                    b.Property<int>("ImageID")
+                    b.Property<long>("ImageID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImageID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ImageID"));
 
                     b.Property<string>("ImageDescription")
                         .HasColumnType("nvarchar(max)");
@@ -471,12 +562,7 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LessonID")
-                        .HasColumnType("int");
-
                     b.HasKey("ImageID");
-
-                    b.HasIndex("LessonID");
 
                     b.ToTable("Images");
                 });
@@ -508,6 +594,58 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.HasIndex("SubjectID");
 
                     b.ToTable("Lessons");
+                });
+
+            modelBuilder.Entity("Entities.Models.LessonImage", b =>
+                {
+                    b.Property<long>("LessonImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("LessonImageId"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("ImageId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("LessonId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LessonImageId");
+
+                    b.HasIndex("ImageId");
+
+                    b.HasIndex("LessonId");
+
+                    b.ToTable("lessonImages");
+                });
+
+            modelBuilder.Entity("Entities.Models.LessonVideo", b =>
+                {
+                    b.Property<long>("LessonVideoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("LessonVideoId"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LessonId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("VideoId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("LessonVideoId");
+
+                    b.HasIndex("LessonId");
+
+                    b.HasIndex("VideoId");
+
+                    b.ToTable("lessonVideos");
                 });
 
             modelBuilder.Entity("Entities.Models.Library", b =>
@@ -550,9 +688,6 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentID"));
 
-                    b.Property<int>("CityID")
-                        .HasColumnType("int");
-
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
@@ -564,8 +699,6 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("StudentID");
-
-                    b.HasIndex("CityID");
 
                     b.HasIndex("DepartmentID");
 
@@ -747,17 +880,16 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Video", b =>
                 {
-                    b.Property<int>("VideoID")
+                    b.Property<long>("VideoID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VideoID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("VideoID"));
 
-                    b.Property<int>("LessonID")
-                        .HasColumnType("int");
+                    b.Property<string>("VideoDiscription")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VideoTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VideoUrl")
@@ -765,8 +897,6 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("VideoID");
-
-                    b.HasIndex("LessonID");
 
                     b.ToTable("Videos");
                 });
@@ -937,15 +1067,42 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Entities.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("Entities.Models.City", "City")
+                        .WithMany("ApplicationUsers")
+                        .HasForeignKey("CityID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("City");
+                });
+
             modelBuilder.Entity("Entities.Models.Attendance", b =>
                 {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("Attendances")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Student", "Student")
                         .WithMany("Attendances")
                         .HasForeignKey("StudentID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Entities.Models.Teacher", "Teacher")
+                        .WithMany("Attendances")
+                        .HasForeignKey("TeacherID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
                     b.Navigation("Student");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("Entities.Models.Class", b =>
@@ -984,6 +1141,44 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Subject");
 
                     b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("Entities.Models.EventVideo", b =>
+                {
+                    b.HasOne("Entities.Models.Events", "Events")
+                        .WithMany("Videos")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Video", "Video")
+                        .WithMany("EventVideos")
+                        .HasForeignKey("VideoID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Events");
+
+                    b.Navigation("Video");
+                });
+
+            modelBuilder.Entity("Entities.Models.EventsImage", b =>
+                {
+                    b.HasOne("Entities.Models.Events", "Events")
+                        .WithMany("EventsImages")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Image", "Image")
+                        .WithMany("EventsImages")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Events");
+
+                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("Entities.Models.Exam", b =>
@@ -1059,17 +1254,6 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("Entities.Models.Image", b =>
-                {
-                    b.HasOne("Entities.Models.Lesson", "Lesson")
-                        .WithMany("Images")
-                        .HasForeignKey("LessonID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Lesson");
-                });
-
             modelBuilder.Entity("Entities.Models.Lesson", b =>
                 {
                     b.HasOne("Entities.Models.Subject", "Subject")
@@ -1079,6 +1263,44 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired();
 
                     b.Navigation("Subject");
+                });
+
+            modelBuilder.Entity("Entities.Models.LessonImage", b =>
+                {
+                    b.HasOne("Entities.Models.Image", "Image")
+                        .WithMany("lessonImages")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Lesson", "Lesson")
+                        .WithMany("LessonImages")
+                        .HasForeignKey("LessonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Image");
+
+                    b.Navigation("Lesson");
+                });
+
+            modelBuilder.Entity("Entities.Models.LessonVideo", b =>
+                {
+                    b.HasOne("Entities.Models.Lesson", "Lesson")
+                        .WithMany("LessonVideos")
+                        .HasForeignKey("LessonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Video", "Video")
+                        .WithMany("LessonVideos")
+                        .HasForeignKey("VideoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Lesson");
+
+                    b.Navigation("Video");
                 });
 
             modelBuilder.Entity("Entities.Models.Parent", b =>
@@ -1094,12 +1316,6 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Student", b =>
                 {
-                    b.HasOne("Entities.Models.City", "City")
-                        .WithMany("Students")
-                        .HasForeignKey("CityID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Entities.Models.Department", "Department")
                         .WithMany("Students")
                         .HasForeignKey("DepartmentID")
@@ -1116,8 +1332,6 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("City");
 
                     b.Navigation("Department");
 
@@ -1213,17 +1427,6 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("Entities.Models.Video", b =>
-                {
-                    b.HasOne("Entities.Models.Lesson", "Lesson")
-                        .WithMany("Videos")
-                        .HasForeignKey("LessonID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Lesson");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1277,6 +1480,8 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.AcademicYear", b =>
                 {
+                    b.Navigation("Attendances");
+
                     b.Navigation("Classes");
 
                     b.Navigation("StudentClasses");
@@ -1284,7 +1489,7 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.City", b =>
                 {
-                    b.Navigation("Students");
+                    b.Navigation("ApplicationUsers");
                 });
 
             modelBuilder.Entity("Entities.Models.Class", b =>
@@ -1301,6 +1506,13 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Subjects");
                 });
 
+            modelBuilder.Entity("Entities.Models.Events", b =>
+                {
+                    b.Navigation("EventsImages");
+
+                    b.Navigation("Videos");
+                });
+
             modelBuilder.Entity("Entities.Models.Exam", b =>
                 {
                     b.Navigation("Grades");
@@ -1311,11 +1523,18 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Submissions");
                 });
 
+            modelBuilder.Entity("Entities.Models.Image", b =>
+                {
+                    b.Navigation("EventsImages");
+
+                    b.Navigation("lessonImages");
+                });
+
             modelBuilder.Entity("Entities.Models.Lesson", b =>
                 {
-                    b.Navigation("Images");
+                    b.Navigation("LessonImages");
 
-                    b.Navigation("Videos");
+                    b.Navigation("LessonVideos");
                 });
 
             modelBuilder.Entity("Entities.Models.Parent", b =>
@@ -1343,6 +1562,8 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Teacher", b =>
                 {
+                    b.Navigation("Attendances");
+
                     b.Navigation("ClassSchedules");
 
                     b.Navigation("Subjects");
@@ -1353,6 +1574,13 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("AcademicYears");
 
                     b.Navigation("Exams");
+                });
+
+            modelBuilder.Entity("Entities.Models.Video", b =>
+                {
+                    b.Navigation("EventVideos");
+
+                    b.Navigation("LessonVideos");
                 });
 #pragma warning restore 612, 618
         }

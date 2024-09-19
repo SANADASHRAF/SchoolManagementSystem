@@ -42,6 +42,10 @@ namespace Repository
         public DbSet<StudentClass> StudentClasses { get; set; }
         public DbSet<Term> Terms { get; set; }
         public DbSet<TuitionPayments> TuitionPayments { get; set; }
+        public DbSet<EventVideo> eventVideos { get; set; }
+        public DbSet<EventsImage> eventsImages { get; set; }
+        public DbSet<LessonImage> lessonImages { get; set; }
+        public DbSet<LessonVideo> lessonVideos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

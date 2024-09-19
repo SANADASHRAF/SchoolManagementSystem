@@ -23,11 +23,18 @@ namespace Entities.Models
 
         public string? Description { get; set; }
 
+        public string ? ExamUrlFilePath { get; set; }
+        public string ? ExamUrlImagPath { get; set; }
+
         // Relationships
 
         [ForeignKey(nameof(Subject))]
         public int SubjectID { get; set; }
         public Subject Subject { get; set; }
+
+        [ForeignKey(nameof(Teacher))]
+        public int TeacherID { get; set; }
+        public Teacher Teacher { get; set; }
 
         public ICollection<Grade> Grades { get; set; }
     }

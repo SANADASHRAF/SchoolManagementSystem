@@ -23,7 +23,7 @@ namespace Entities.Models
         public int SubjectID { get; set; }
         public Subject Subject { get; set; }
 
-        public ICollection<Video> Videos { get; set; }
-        public ICollection<Image> Images { get; set; }
+        public ICollection<LessonImage> LessonImages { get; set; }
+        public ICollection<LessonVideo> LessonVideos { get; set; }
     }
 }

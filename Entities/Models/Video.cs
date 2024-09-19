@@ -11,14 +11,14 @@ namespace Entities.Models
     public class Video
     {
         [Key]
-        public int VideoID { get; set; }
-        public string VideoTitle { get; set; }
+        public long VideoID { get; set; }
+        public string? VideoTitle { get; set; }
+        public string? VideoDiscription { get; set; }
         public string VideoUrl { get; set; }
 
         // Relationships
 
-        [ForeignKey(nameof(Lesson))]
-        public int LessonID { get; set; }
-        public Lesson Lesson { get; set; }
+        public ICollection<EventVideo> EventVideos { get; set; }
+        public ICollection<LessonVideo> LessonVideos { get; set; }
     }
 }

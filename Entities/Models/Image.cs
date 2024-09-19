@@ -11,7 +11,7 @@ namespace Entities.Models
     public class Image
     {
         [Key]
-        public int ImageID { get; set; }
+        public long ImageID { get; set; }
 
         [Required(ErrorMessage = "URL is required.")]
         public string ImageUrl { get; set; }
@@ -20,8 +20,10 @@ namespace Entities.Models
 
         // Relationships
 
-        [ForeignKey(nameof(Lesson))]
-        public int LessonID { get; set; }
-        public Lesson Lesson { get; set; }
+
+        public ICollection<EventsImage> EventsImages { get; set; }
+        public ICollection<LessonImage> lessonImages { get; set; }
+
+
     }
 }
