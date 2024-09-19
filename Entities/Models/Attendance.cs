@@ -19,10 +19,19 @@ namespace Entities.Models
         [Required(ErrorMessage = "IsPresent is required.")]
         public bool IsPresent { get; set; }
 
-
         // Relationships
         [ForeignKey(nameof(Student))]
         public int StudentID { get; set; }
         public Student Student { get; set; }
+
+    
+        [ForeignKey(nameof(AcademicYear))]
+        public int AcademicYearID { get; set; }
+        public AcademicYear AcademicYear { get; set; }
+
+     
+        [ForeignKey(nameof(Teacher))]
+        public int TeacherID { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

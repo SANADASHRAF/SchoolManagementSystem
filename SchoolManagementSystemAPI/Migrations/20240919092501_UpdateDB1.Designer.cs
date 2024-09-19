@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -11,9 +12,11 @@ using Repository;
 namespace SchoolManagementSystemAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20240919092501_UpdateDB1")]
+    partial class UpdateDB1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,9 +98,6 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CityID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -157,8 +157,6 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CityID");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -562,6 +560,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentID"));
 
+                    b.Property<int>("CityID")
+                        .HasColumnType("int");
+
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
@@ -573,6 +574,8 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("StudentID");
+
+                    b.HasIndex("CityID");
 
                     b.HasIndex("DepartmentID");
 
@@ -944,17 +947,6 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entities.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("Entities.Models.City", "City")
-                        .WithMany("ApplicationUsers")
-                        .HasForeignKey("CityID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("City");
-                });
-
             modelBuilder.Entity("Entities.Models.Attendance", b =>
                 {
                     b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
@@ -1128,6 +1120,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Student", b =>
                 {
+                    b.HasOne("Entities.Models.City", "City")
+                        .WithMany("Students")
+                        .HasForeignKey("CityID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Department", "Department")
                         .WithMany("Students")
                         .HasForeignKey("DepartmentID")
@@ -1144,6 +1142,8 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("City");
 
                     b.Navigation("Department");
 
@@ -1312,7 +1312,7 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.City", b =>
                 {
-                    b.Navigation("ApplicationUsers");
+                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("Entities.Models.Class", b =>

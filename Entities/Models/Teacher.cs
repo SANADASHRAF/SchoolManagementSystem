@@ -20,5 +20,6 @@ namespace Entities.Models
         // Relationships
         public ICollection<ClassSchedule> ClassSchedules { get; set; }
         public ICollection<Subject> Subjects { get; set; }
+        public ICollection<Attendance>? Attendances { get; set; }
     }
 }

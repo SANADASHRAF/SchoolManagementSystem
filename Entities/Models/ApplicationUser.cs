@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "Enrollment date is required.")]
         public DateTime EnrollmentDate { get; set; }
+
+        // Relationships
+
+        [ForeignKey(nameof(City))]
+        public int CityID { get; set; }
+        public City City { get; set; }
 
     }
 }

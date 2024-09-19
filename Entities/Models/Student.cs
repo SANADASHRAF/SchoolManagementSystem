@@ -19,12 +19,6 @@ namespace Entities.Models
         public string UserID { get; set; }
         public ApplicationUser User { get; set; }
 
-     
-        [ForeignKey(nameof(City))]
-        public int CityID { get; set; }
-        public City City { get; set; }
-
-
         [ForeignKey(nameof(Department))]
         public int DepartmentID { get; set; }
         public Department Department { get; set; }

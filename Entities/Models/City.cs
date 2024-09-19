@@ -17,7 +17,7 @@ namespace Entities.Models
         public string CityName { get; set; }
 
         // Relationships
-        public ICollection<Student> Students { get; set; }
+        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
 
     }
 }

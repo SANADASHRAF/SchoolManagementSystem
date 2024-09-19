@@ -25,6 +25,7 @@ namespace Entities.Models
         // Relationships
         public ICollection<StudentClass>? StudentClasses { get; set; }
         public ICollection<Class>? Classes { get; set; }
+        public ICollection<Attendance>? Attendances { get; set; }
 
     }
 }

@@ -48,7 +48,6 @@ namespace Repository
             base.OnModelCreating(modelBuilder);
 
             // Apply 'Restrict' behavior to all relationships by default
-            // Apply 'Restrict' behavior to all relationships by default
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 foreach (var foreignKey in entityType.GetForeignKeys())
@@ -56,8 +55,6 @@ namespace Repository
                     foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
                 }
             }
-
-           
         }
 
     }
