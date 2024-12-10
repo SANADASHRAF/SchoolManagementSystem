@@ -17,7 +17,7 @@ namespace SchoolManagementSystemAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -44,6 +44,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("YearID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -73,6 +76,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminID"));
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("UserID")
                         .HasColumnType("nvarchar(450)");
 
@@ -95,7 +101,10 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CityID")
+                    b.Property<long?>("ApplicationUserImageID")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("CityID")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -158,6 +167,8 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationUserImageID");
+
                     b.HasIndex("CityID");
 
                     b.HasIndex("NormalizedEmail")
@@ -171,6 +182,33 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Entities.Models.ApplicationUserImage", b =>
+                {
+                    b.Property<long>("ApplicationUserImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ApplicationUserImageId"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("ImageId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ApplicationUserImageId");
+
+                    b.HasIndex("ImageId");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("applicationUserImages");
+                });
+
             modelBuilder.Entity("Entities.Models.Attendance", b =>
                 {
                     b.Property<int>("AttendanceID")
@@ -181,6 +219,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.Property<int>("AcademicYearID")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -194,6 +235,9 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("TeacherID")
                         .HasColumnType("int");
 
+                    b.Property<int>("TermID")
+                        .HasColumnType("int");
+
                     b.HasKey("AttendanceID");
 
                     b.HasIndex("AcademicYearID");
@@ -202,7 +246,52 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.HasIndex("TeacherID");
 
+                    b.HasIndex("TermID");
+
                     b.ToTable("Attendances");
+                });
+
+            modelBuilder.Entity("Entities.Models.Book", b =>
+                {
+                    b.Property<long>("BookId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("BookId"));
+
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookAuther")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookFilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DepartmentID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TermID")
+                        .HasColumnType("int");
+
+                    b.HasKey("BookId");
+
+                    b.HasIndex("AcademicYearID");
+
+                    b.HasIndex("DepartmentID");
+
+                    b.HasIndex("TermID");
+
+                    b.ToTable("books");
                 });
 
             modelBuilder.Entity("Entities.Models.City", b =>
@@ -216,6 +305,9 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<string>("CityName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("CityID");
 
@@ -233,6 +325,9 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<string>("ClassName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -256,8 +351,14 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScheduleID"));
 
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
                     b.Property<int>("ClassID")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("DayOfWeek")
                         .HasColumnType("int");
@@ -274,13 +375,20 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("TeacherID")
                         .HasColumnType("int");
 
+                    b.Property<int>("TermID")
+                        .HasColumnType("int");
+
                     b.HasKey("ScheduleID");
+
+                    b.HasIndex("AcademicYearID");
 
                     b.HasIndex("ClassID");
 
                     b.HasIndex("SubjectID");
 
                     b.HasIndex("TeacherID");
+
+                    b.HasIndex("TermID");
 
                     b.ToTable("ClassSchedules");
                 });
@@ -292,6 +400,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DepartmentName")
                         .IsRequired()
@@ -338,6 +449,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("EventID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -388,6 +502,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExamID"));
 
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -410,12 +530,19 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("SubjectID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TermID")
+                    b.Property<int>("TeacherID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TermID")
                         .HasColumnType("int");
 
                     b.HasKey("ExamID");
 
+                    b.HasIndex("AcademicYearID");
+
                     b.HasIndex("SubjectID");
+
+                    b.HasIndex("TeacherID");
 
                     b.HasIndex("TermID");
 
@@ -429,6 +556,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExamSubmissionID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("ExamID")
                         .HasColumnType("int");
@@ -465,6 +595,9 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("ExamID")
                         .HasColumnType("int");
 
@@ -491,6 +624,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HomeworkID"));
 
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
@@ -504,7 +643,19 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<string>("HomeworkUrlImagPath")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TeacherID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TermID")
+                        .HasColumnType("int");
+
                     b.HasKey("HomeworkID");
+
+                    b.HasIndex("AcademicYearID");
+
+                    b.HasIndex("TeacherID");
+
+                    b.HasIndex("TermID");
 
                     b.ToTable("Homeworks");
                 });
@@ -519,6 +670,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.Property<string>("Comments")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("HomeworkID")
                         .HasColumnType("int");
@@ -552,6 +706,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ImageID"));
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ImageDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -572,6 +729,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LessonID"));
 
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -582,13 +745,20 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("SubjectID")
                         .HasColumnType("int");
 
+                    b.Property<int>("TermID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LessonID");
 
+                    b.HasIndex("AcademicYearID");
+
                     b.HasIndex("SubjectID");
+
+                    b.HasIndex("TermID");
 
                     b.ToTable("Lessons");
                 });
@@ -653,7 +823,23 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LibraryID"));
 
+                    b.Property<long>("BookID")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("LibraryID");
+
+                    b.HasIndex("BookID");
 
                     b.ToTable("Libraries");
                 });
@@ -665,6 +851,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ParentID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserID")
                         .IsRequired()
@@ -685,10 +874,16 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentID"));
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
                     b.Property<int?>("ParentID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StudentExactYearID")
                         .HasColumnType("int");
 
                     b.Property<string>("UserID")
@@ -717,6 +912,9 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("ClassID")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
@@ -734,6 +932,33 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.ToTable("StudentClasses");
                 });
 
+            modelBuilder.Entity("Entities.Models.StudentExactYear", b =>
+                {
+                    b.Property<long>("StudentExactYearId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("StudentExactYearId"));
+
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StudentID")
+                        .HasColumnType("int");
+
+                    b.HasKey("StudentExactYearId");
+
+                    b.HasIndex("AcademicYearID");
+
+                    b.HasIndex("StudentID")
+                        .IsUnique();
+
+                    b.ToTable("studentExactYears");
+                });
+
             modelBuilder.Entity("Entities.Models.Subject", b =>
                 {
                     b.Property<int>("SubjectID")
@@ -741,6 +966,12 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubjectID"));
+
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
@@ -752,14 +983,16 @@ namespace SchoolManagementSystemAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TeacherID")
+                    b.Property<int>("TermID")
                         .HasColumnType("int");
 
                     b.HasKey("SubjectID");
 
+                    b.HasIndex("AcademicYearID");
+
                     b.HasIndex("DepartmentID");
 
-                    b.HasIndex("TeacherID");
+                    b.HasIndex("TermID");
 
                     b.ToTable("Subjects");
                 });
@@ -772,6 +1005,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SpecializationID"));
 
+                    b.Property<int>("AcademicYearID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -783,9 +1022,21 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<int>("SubjectID")
                         .HasColumnType("int");
 
+                    b.Property<int>("TeacherID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TermID")
+                        .HasColumnType("int");
+
                     b.HasKey("SpecializationID");
 
+                    b.HasIndex("AcademicYearID");
+
                     b.HasIndex("SubjectID");
+
+                    b.HasIndex("TeacherID");
+
+                    b.HasIndex("TermID");
 
                     b.ToTable("SubjectSpecializations");
                 });
@@ -797,6 +1048,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SuperAdminID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserID")
                         .IsRequired()
@@ -817,6 +1071,9 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeacherID"));
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("UserID")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -835,6 +1092,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TermID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -862,6 +1122,9 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
 
@@ -882,6 +1145,9 @@ namespace SchoolManagementSystemAPI.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("VideoID"));
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("VideoDiscription")
                         .HasColumnType("nvarchar(max)");
@@ -1066,13 +1332,38 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.ApplicationUser", b =>
                 {
+                    b.HasOne("Entities.Models.ApplicationUserImage", "ApplicationUserImage")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserImageID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Entities.Models.City", "City")
                         .WithMany("ApplicationUsers")
                         .HasForeignKey("CityID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ApplicationUserImage");
+
+                    b.Navigation("City");
+                });
+
+            modelBuilder.Entity("Entities.Models.ApplicationUserImage", b =>
+                {
+                    b.HasOne("Entities.Models.Image", "Image")
+                        .WithMany()
+                        .HasForeignKey("ImageId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("City");
+                    b.HasOne("Entities.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Image");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Entities.Models.Attendance", b =>
@@ -1095,11 +1386,45 @@ namespace SchoolManagementSystemAPI.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("Attendances")
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("AcademicYear");
 
                     b.Navigation("Student");
 
                     b.Navigation("Teacher");
+
+                    b.Navigation("Term");
+                });
+
+            modelBuilder.Entity("Entities.Models.Book", b =>
+                {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("books")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Department", "Department")
+                        .WithMany("books")
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("books")
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Term");
                 });
 
             modelBuilder.Entity("Entities.Models.Class", b =>
@@ -1115,6 +1440,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.ClassSchedule", b =>
                 {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("classSchedules")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Class", "Class")
                         .WithMany("Schedules")
                         .HasForeignKey("ClassID")
@@ -1133,11 +1464,21 @@ namespace SchoolManagementSystemAPI.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("classSchedules")
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
                     b.Navigation("Class");
 
                     b.Navigation("Subject");
 
                     b.Navigation("Teacher");
+
+                    b.Navigation("Term");
                 });
 
             modelBuilder.Entity("Entities.Models.EventVideo", b =>
@@ -1180,18 +1521,37 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Exam", b =>
                 {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("exams")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Subject", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Term", null)
-                        .WithMany("Exams")
+                    b.HasOne("Entities.Models.Teacher", "Teacher")
+                        .WithMany("exams")
+                        .HasForeignKey("TeacherID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("exams")
                         .HasForeignKey("TermID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
 
                     b.Navigation("Subject");
+
+                    b.Navigation("Teacher");
+
+                    b.Navigation("Term");
                 });
 
             modelBuilder.Entity("Entities.Models.ExamSubmission", b =>
@@ -1232,6 +1592,33 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Student");
                 });
 
+            modelBuilder.Entity("Entities.Models.Homework", b =>
+                {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("homeworks")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Teacher", "Teacher")
+                        .WithMany("homeworks")
+                        .HasForeignKey("TeacherID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("homeworks")
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
+                    b.Navigation("Teacher");
+
+                    b.Navigation("Term");
+                });
+
             modelBuilder.Entity("Entities.Models.HomeworkSubmission", b =>
                 {
                     b.HasOne("Entities.Models.Homework", "Homework")
@@ -1253,13 +1640,29 @@ namespace SchoolManagementSystemAPI.Migrations
 
             modelBuilder.Entity("Entities.Models.Lesson", b =>
                 {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("lessons")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Subject", "Subject")
                         .WithMany("Lessons")
                         .HasForeignKey("SubjectID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("lessons")
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
                     b.Navigation("Subject");
+
+                    b.Navigation("Term");
                 });
 
             modelBuilder.Entity("Entities.Models.LessonImage", b =>
@@ -1298,6 +1701,17 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Lesson");
 
                     b.Navigation("Video");
+                });
+
+            modelBuilder.Entity("Entities.Models.Library", b =>
+                {
+                    b.HasOne("Entities.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("Entities.Models.Parent", b =>
@@ -1364,31 +1778,85 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Year");
                 });
 
+            modelBuilder.Entity("Entities.Models.StudentExactYear", b =>
+                {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("studentExactYears")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Student", "Student")
+                        .WithOne("studentExactYear")
+                        .HasForeignKey("Entities.Models.StudentExactYear", "StudentID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("Entities.Models.Subject", b =>
                 {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("subjects")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Department", "Department")
                         .WithMany("Subjects")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Entities.Models.Teacher", null)
-                        .WithMany("Subjects")
-                        .HasForeignKey("TeacherID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany()
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
 
                     b.Navigation("Department");
+
+                    b.Navigation("Term");
                 });
 
             modelBuilder.Entity("Entities.Models.SubjectSpecialization", b =>
                 {
+                    b.HasOne("Entities.Models.AcademicYear", "AcademicYear")
+                        .WithMany("subjectSpecializations")
+                        .HasForeignKey("AcademicYearID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.Subject", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Entities.Models.Teacher", "Teacher")
+                        .WithMany("subjectSpecializations")
+                        .HasForeignKey("TeacherID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.Term", "Term")
+                        .WithMany("subjectSpecializations")
+                        .HasForeignKey("TermID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+
                     b.Navigation("Subject");
+
+                    b.Navigation("Teacher");
+
+                    b.Navigation("Term");
                 });
 
             modelBuilder.Entity("Entities.Models.SuperAdmin", b =>
@@ -1482,6 +1950,22 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Classes");
 
                     b.Navigation("StudentClasses");
+
+                    b.Navigation("books");
+
+                    b.Navigation("classSchedules");
+
+                    b.Navigation("exams");
+
+                    b.Navigation("homeworks");
+
+                    b.Navigation("lessons");
+
+                    b.Navigation("studentExactYears");
+
+                    b.Navigation("subjectSpecializations");
+
+                    b.Navigation("subjects");
                 });
 
             modelBuilder.Entity("Entities.Models.City", b =>
@@ -1501,6 +1985,8 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("Students");
 
                     b.Navigation("Subjects");
+
+                    b.Navigation("books");
                 });
 
             modelBuilder.Entity("Entities.Models.Events", b =>
@@ -1550,6 +2036,8 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.Navigation("HomeworkSubmissions");
 
                     b.Navigation("StudentClasses");
+
+                    b.Navigation("studentExactYear");
                 });
 
             modelBuilder.Entity("Entities.Models.Subject", b =>
@@ -1563,14 +2051,30 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.Navigation("ClassSchedules");
 
-                    b.Navigation("Subjects");
+                    b.Navigation("exams");
+
+                    b.Navigation("homeworks");
+
+                    b.Navigation("subjectSpecializations");
                 });
 
             modelBuilder.Entity("Entities.Models.Term", b =>
                 {
                     b.Navigation("AcademicYears");
 
-                    b.Navigation("Exams");
+                    b.Navigation("Attendances");
+
+                    b.Navigation("books");
+
+                    b.Navigation("classSchedules");
+
+                    b.Navigation("exams");
+
+                    b.Navigation("homeworks");
+
+                    b.Navigation("lessons");
+
+                    b.Navigation("subjectSpecializations");
                 });
 
             modelBuilder.Entity("Entities.Models.Video", b =>

@@ -16,13 +16,22 @@ namespace Entities.Models
         [Required(ErrorMessage = "Subject name is required.")]
         public string SubjectName { get; set; }
 
-        public string? Description { get; set; } 
+        public string? Description { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
 
         [ForeignKey(nameof(Department))]
         public int DepartmentID { get; set; }
         public Department Department { get; set; }
+
+        [ForeignKey(nameof(AcademicYear))]
+        public int AcademicYearID { get; set; }
+        public AcademicYear AcademicYear { get; set; }
+
+        [ForeignKey(nameof(Term))]
+        public int TermID { get; set; }
+        public Term Term { get; set; }
 
         public ICollection<Lesson> Lessons { get; set; }
         public ICollection<Class> Classes { get; set; }

@@ -182,4 +182,15 @@ G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bi
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\NHibernate.dll
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Remotion.Linq.dll
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Remotion.Linq.EagerFetching.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Contracts.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Contracts.pdb
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\nlog.config
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\NLog.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\LoggerService.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\LoggerService.pdb
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\obj\Debug\net8.0\SchoolManagementSystemAPI.MvcApplicationPartsAssemblyInfo.cs
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Service.Contracts.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Service.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Service.Contracts.pdb
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI\bin\Debug\net8.0\Service.pdb

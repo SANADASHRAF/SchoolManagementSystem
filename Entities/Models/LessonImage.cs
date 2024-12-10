@@ -12,7 +12,7 @@ namespace Entities.Models
     {
         [Key]
         public long LessonImageId { get; set; }
-        public DateTime? CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }= DateTime.Now;
 
         // relationships
 

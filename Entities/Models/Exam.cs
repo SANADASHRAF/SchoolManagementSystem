@@ -25,6 +25,7 @@ namespace Entities.Models
 
         public string ? ExamUrlFilePath { get; set; }
         public string ? ExamUrlImagPath { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
 
@@ -32,9 +33,18 @@ namespace Entities.Models
         public int SubjectID { get; set; }
         public Subject Subject { get; set; }
 
+
         [ForeignKey(nameof(Teacher))]
         public int TeacherID { get; set; }
         public Teacher Teacher { get; set; }
+
+        [ForeignKey(nameof(AcademicYear))]
+        public int AcademicYearID { get; set; }
+        public AcademicYear AcademicYear { get; set; }
+
+        [ForeignKey(nameof(Term))]
+        public int TermID { get; set; }
+        public Term Term { get; set; }
 
         public ICollection<Grade> Grades { get; set; }
     }

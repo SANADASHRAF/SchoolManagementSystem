@@ -46,6 +46,9 @@ namespace Repository
         public DbSet<EventsImage> eventsImages { get; set; }
         public DbSet<LessonImage> lessonImages { get; set; }
         public DbSet<LessonVideo> lessonVideos { get; set; }
+        public DbSet<Book> books { get; set; }
+        public DbSet<ApplicationUserImage> applicationUserImages { get; set; }
+        public DbSet<StudentExactYear> studentExactYears { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

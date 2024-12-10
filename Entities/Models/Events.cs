@@ -17,7 +17,8 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "Event date is required.")]
         public DateTime EventDate { get; set; }
-        public string? Description { get; set; } 
+        public string? Description { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         public ICollection<EventsImage> EventsImages { get; set; }
         public ICollection<EventVideo> Videos { get; set; }

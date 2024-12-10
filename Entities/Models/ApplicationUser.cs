@@ -24,13 +24,19 @@ namespace Entities.Models
         public string Gender { get; set; }
 
         [Required(ErrorMessage = "Enrollment date is required.")]
-        public DateTime EnrollmentDate { get; set; }
+        public DateTime EnrollmentDate { get; set; }=DateTime.Now;
 
         // Relationships
 
         [ForeignKey(nameof(City))]
-        public int CityID { get; set; }
-        public City City { get; set; }
+        public int? CityID { get; set; }
+        public City? City { get; set; }
+
+
+        [ForeignKey(nameof(ApplicationUserImage))]
+        public long? ApplicationUserImageID { get; set; }
+        public ApplicationUserImage? ApplicationUserImage { get; set; }
+
 
     }
 }

@@ -13,6 +13,7 @@ namespace Entities.Models
     {
         [Key]
         public int StudentClassID { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
 

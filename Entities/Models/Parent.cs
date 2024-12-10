@@ -16,7 +16,7 @@ namespace Entities.Models
         [ForeignKey(nameof(User))]
         public string UserID { get; set; }
         public ApplicationUser User { get; set; }
-
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
         // Relationships
         public ICollection<Student>? Students { get; set; }
     }

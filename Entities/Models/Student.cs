@@ -12,7 +12,7 @@ namespace Entities.Models
     {
         [Key]
         public int StudentID { get; set; }
-
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
         [ForeignKey (nameof (User))]
@@ -28,7 +28,9 @@ namespace Entities.Models
         public int? ParentID { get; set; }
         public Parent? Parent { get; set; }
 
-         
+        [ForeignKey(nameof(StudentExactYear))]
+        public int? StudentExactYearID { get; set; }
+        public StudentExactYear? studentExactYear { get; set; }
 
         //public ICollection<Lesson> Lessons { get; set; }
         public ICollection<HomeworkSubmission> HomeworkSubmissions { get; set; }

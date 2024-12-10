@@ -17,13 +17,12 @@ namespace Entities.Models
         public string ImageUrl { get; set; }
         
         public string? ImageDescription { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
 
-
         public ICollection<EventsImage> EventsImages { get; set; }
         public ICollection<LessonImage> lessonImages { get; set; }
-
 
     }
 }

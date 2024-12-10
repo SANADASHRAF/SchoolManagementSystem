@@ -1,0 +1,70 @@
+[
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "AssignRole",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/AssignRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assignRoleDto",
+        "Type": "Shared.Dtos.AssignRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "AssignRole"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "ChangePassword",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordDto",
+        "Type": "Shared.Dtos.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "ChangePassword"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "login",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Shared.Dtos.UserForAuthenticationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "login"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "RegisterUser",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/RegisterUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userForRegistration",
+        "Type": "Shared.Dtos.UserForRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "RegisterUser"
+  }
+]

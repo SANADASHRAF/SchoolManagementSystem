@@ -19,6 +19,7 @@ namespace Entities.Models
         public double Value { get; set; }
 
         public string? Comments { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
 

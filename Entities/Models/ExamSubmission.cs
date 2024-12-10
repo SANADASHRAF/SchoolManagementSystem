@@ -24,6 +24,7 @@ namespace Entities.Models
 
         public string? ExamSubmissionUrlFilePath { get; set; }
         public string? ExamSubmissionUrlImagPath { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         [ForeignKey(nameof(Student))]
         public int StudentID { get; set; }

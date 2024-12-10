@@ -15,10 +15,12 @@ namespace Entities.Models
         [Required(ErrorMessage = "Department name is required.")]
         public string DepartmentName { get; set; }
 
-        public string? Description { get; set; } 
+        public string? Description { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
         public ICollection<Student> Students { get; set; }
         public ICollection<Subject> Subjects { get; set; }
+        public ICollection<Book> books { get; set; }
     }
 }

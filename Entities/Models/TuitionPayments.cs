@@ -12,8 +12,10 @@ namespace Entities.Models
     {
         [Key]
         public int PaymentID { get; set; }
+        [Required]
         public DateTime PaymentDate { get; set; }
         public decimal Amount { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
         [ForeignKey(nameof(Student))]

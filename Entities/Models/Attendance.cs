@@ -18,8 +18,10 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "IsPresent is required.")]
         public bool IsPresent { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
+
         [ForeignKey(nameof(Student))]
         public int StudentID { get; set; }
         public Student Student { get; set; }
@@ -29,7 +31,10 @@ namespace Entities.Models
         public int AcademicYearID { get; set; }
         public AcademicYear AcademicYear { get; set; }
 
-     
+        [ForeignKey(nameof(Term))]
+        public int TermID { get; set; }
+        public Term Term { get; set; }
+
         [ForeignKey(nameof(Teacher))]
         public int TeacherID { get; set; }
         public Teacher Teacher { get; set; }

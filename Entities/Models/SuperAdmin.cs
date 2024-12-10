@@ -12,6 +12,7 @@ namespace Entities.Models
     {
         [Key]
         public int SuperAdminID { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
 

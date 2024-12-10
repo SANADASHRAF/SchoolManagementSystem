@@ -15,6 +15,7 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "City name is required.")]
         public string CityName { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships
         public ICollection<ApplicationUser> ApplicationUsers { get; set; }

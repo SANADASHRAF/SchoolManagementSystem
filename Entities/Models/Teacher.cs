@@ -12,16 +12,20 @@ namespace Entities.Models
     {
         [Key]
         public int TeacherID { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
+
+         // Relationships
 
         [ForeignKey(nameof(User))]
         public string UserID { get; set; }
         public ApplicationUser User { get; set; }
 
-        // Relationships
+       
+
         public ICollection<ClassSchedule> ClassSchedules { get; set; }
         public ICollection<Exam> exams { get; set; }
         public ICollection<Homework> homeworks { get; set; }
-        public ICollection<Subject> Subjects { get; set; }
         public ICollection<Attendance>? Attendances { get; set; }
+        public ICollection<SubjectSpecialization>? subjectSpecializations { get; set; }
     }
 }

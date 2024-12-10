@@ -14,3 +14,5 @@ G:\SchoolManagementSystemAPI\SchoolManagementSystem\Repository\obj\Debug\net8.0\
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Repository\obj\Debug\net8.0\refint\Repository.dll
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Repository\obj\Debug\net8.0\Repository.pdb
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Repository\obj\Debug\net8.0\ref\Repository.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\Repository\bin\Debug\net8.0\Contracts.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\Repository\bin\Debug\net8.0\Contracts.pdb

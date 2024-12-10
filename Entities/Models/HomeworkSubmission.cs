@@ -20,6 +20,7 @@ namespace Entities.Models
 
         public string? HomeworkSubmissionUrlFilePath { get; set; }
         public string? HomeworkSubmissionUrlImagPath { get; set; }
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         [ForeignKey(nameof(Homework))]
         public int HomeworkID { get; set; }
