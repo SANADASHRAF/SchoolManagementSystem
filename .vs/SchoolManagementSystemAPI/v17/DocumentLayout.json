@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service.contracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi.presentation\\controllers\\userauthonticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|solutionrelative:schoolmanagementsystemapi.presentation\\controllers\\userauthonticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDA4C7B1-B8D3-4152-B336-591D39CE3857}|Service\\Service.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FDA4C7B1-B8D3-4152-B336-591D39CE3857}|Service\\Service.csproj|solutionrelative:service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi.presentation\\controllers\\userauthonticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|solutionrelative:schoolmanagementsystemapi.presentation\\controllers\\userauthonticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C2366B8-96BB-4D6E-A809-A5E7CAFF99B4}|Shared\\Shared.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\shared\\dtos\\userauthonticationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C2366B8-96BB-4D6E-A809-A5E7CAFF99B4}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\userauthonticationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F094DFF7-07BB-41F1-B160-AC1C03979FEB}|SchoolManagementSystemAPI\\SchoolManagementSystemAPI.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F094DFF7-07BB-41F1-B160-AC1C03979FEB}|SchoolManagementSystemAPI\\SchoolManagementSystemAPI.csproj|solutionrelative:schoolmanagementsystemapi\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service.contracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,15 +38,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "IUserService.cs",
               "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\IUserService.cs",
               "RelativeDocumentMoniker": "Service.Contracts\\IUserService.cs",
               "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\IUserService.cs",
               "RelativeToolTip": "Service.Contracts\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T22:30:37.167Z",
+              "WhenOpened": "2024-12-30T03:18:23.864Z",
               "EditorCaption": ""
             },
             {
@@ -65,45 +57,23 @@
               "RelativeDocumentMoniker": "Service\\UserService.cs",
               "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service\\UserService.cs",
               "RelativeToolTip": "Service\\UserService.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAA0wKkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAlwO0AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T22:33:05.78Z"
+              "WhenOpened": "2024-12-30T03:18:18.926Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "SchoolManagementSystemAPI\\MappingProfile.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\MappingProfile.cs",
-              "RelativeToolTip": "SchoolManagementSystemAPI\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T22:30:12.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserAuthonticationDTO.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Shared\\Dtos\\UserAuthonticationDTO.cs",
-              "RelativeDocumentMoniker": "Shared\\Dtos\\UserAuthonticationDTO.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Shared\\Dtos\\UserAuthonticationDTO.cs",
-              "RelativeToolTip": "Shared\\Dtos\\UserAuthonticationDTO.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAIwD8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T22:08:42.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserAuthonticationController.cs",
               "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
               "RelativeDocumentMoniker": "SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
               "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
               "RelativeToolTip": "SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAkwGAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAQwLkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T19:58:11.423Z"
+              "WhenOpened": "2024-12-30T03:13:48.51Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -20,7 +20,7 @@
     "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
     "Method": "ChangePassword",
     "RelativePath": "SchoolManagement/UserAuthentiaction/ChangePassword",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -32,6 +32,34 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "ChangePassword"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "GetAppRoles",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/GetAppRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetAppRoles"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "GetUserById",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/GetUserById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetUserById"
   },
   {
     "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
@@ -52,6 +80,23 @@
   },
   {
     "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "Logout",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/Logout",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "Logout"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
     "Method": "RegisterUser",
     "RelativePath": "SchoolManagement/UserAuthentiaction/RegisterUser",
     "HttpMethod": "POST",
@@ -66,5 +111,44 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "RegisterUser"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "RegisterUserImage",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/RegisterUserImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "RegisterUserImage"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "SoftDeleteUser",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/SoftDeleteUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "DeleteUser"
   }
 ]

@@ -37,6 +37,48 @@
         }
       }
     },
+    "/SchoolManagement/UserAuthentiaction/RegisterUserImage": {
+      "post": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "RegisterUserImage",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Image"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string"
+                  },
+                  "Image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Image": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/SchoolManagement/UserAuthentiaction/login": {
       "post": {
         "tags": [
@@ -102,7 +144,7 @@
       }
     },
     "/SchoolManagement/UserAuthentiaction/ChangePassword": {
-      "post": {
+      "put": {
         "tags": [
           "UserAuthontication"
         ],
@@ -126,6 +168,85 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/Logout": {
+      "put": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "Logout",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/SoftDeleteUser": {
+      "delete": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "DeleteUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/GetAppRoles": {
+      "get": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "GetAppRoles",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/GetUserById": {
+      "get": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "GetUserById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -167,12 +288,16 @@
             "type": "string"
           },
           "oldPassword": {
-            "minLength": 1,
+            "minLength": 10,
             "type": "string"
           },
           "newPassword": {
-            "minLength": 1,
+            "minLength": 10,
             "type": "string"
+          },
+          "confirmNewPassword": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -199,6 +324,7 @@
         "required": [
           "address",
           "cityID",
+          "confirmPassword",
           "dateOfBirth",
           "email",
           "gender",
@@ -234,6 +360,10 @@
             "type": "string"
           },
           "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "confirmPassword": {
             "minLength": 1,
             "type": "string"
           },

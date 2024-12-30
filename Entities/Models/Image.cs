@@ -15,6 +15,7 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "URL is required.")]
         public string ImageUrl { get; set; }
+        public string imagename { get; set; }
         
         public string? ImageDescription { get; set; }
         public DateTime? CreateDate { get; set; } = DateTime.Now;

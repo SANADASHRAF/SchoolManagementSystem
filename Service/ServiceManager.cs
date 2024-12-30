@@ -63,7 +63,7 @@ namespace Service
             _gradeService = new Lazy<IGradeService>(() => new GradeService(repositoryManager, logger));
             _homeworkService = new Lazy<IHomeworkService>(() => new HomeworkService(repositoryManager, logger));
             _homeworkSubmissionService = new Lazy<IHomeworkSubmissionService>(() => new HomeworkSubmissionService(repositoryManager, logger));
-            _imageService = new Lazy<IImageService>(() => new ImageService(repositoryManager, logger));
+            _imageService = new Lazy<IImageService>(() => new ImageService(repositoryManager, logger, userManager));
             _lessonService = new Lazy<ILessonService>(() => new LessonService(repositoryManager, logger));
             _libraryService = new Lazy<ILibraryService>(() => new LibraryService(repositoryManager, logger));
             _parentService = new Lazy<IParentService>(() => new ParentService(repositoryManager, logger));

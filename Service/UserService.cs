@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.Models;
+using FluentNHibernate.Conventions.Inspections;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Service.Contracts;
@@ -76,7 +78,10 @@ namespace Service
             var signingCredentials = GetSigningCredentials();
             var claims = await GetClaims();
             var tokenOptions = GenerateTokenOptions(signingCredentials, claims);
-            return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+            var token=new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+            _user.Token= token;
+            _repository.Save();
+            return token ;
         }
 
         private SigningCredentials GetSigningCredentials()
@@ -90,15 +95,29 @@ namespace Service
 
         private async Task<List<Claim>> GetClaims()
         {
+            _user = await _userManager.Users
+            .Include(u => u.ApplicationUserImage) 
+            .ThenInclude(ai => ai.Image) 
+            .FirstOrDefaultAsync(u => u.Id == _user.Id);
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, _user.UserName)
+                new Claim("Name", _user.Name ?? string.Empty), 
+                new Claim("UserName", _user.UserName ?? string.Empty), 
+                new Claim("Email", _user.Email?? string.Empty), 
+                new Claim("Id", _user.Id?? string.Empty), 
+                new Claim("Gender", _user.Gender?? string.Empty), 
+                new Claim("Adress", _user.Address?? string.Empty), 
+                new Claim("ImageUrl", _user.ApplicationUserImage?.Image?.ImageUrl ?? string.Empty), 
+             
             };
+
+            
             var roles = await _userManager.GetRolesAsync(_user);
             foreach (var role in roles)
             {
-                claims.Add(new Claim(ClaimTypes.Role, role));
+                claims.Add(new Claim("Roles", role));
             }
+
             return claims;
         }
 
@@ -168,5 +187,65 @@ namespace Service
         }
 
 
+        public async Task<string> SoftDeleteUser(string userId)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
+                    return "User not found!";
+                
+                user.IsDeleted = true;
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    _logger.LogInfo($"User with ID {userId} has been soft deleted.");
+                    return "User deleted successfully!";
+                }
+                else
+                {
+                    return "Failed to  deleted User.";
+                }
+            }
+            catch (Exception ex)
+            {
+                return $" {ex.Message}";
+            }
+        }
+
+       public async Task<string> LogedOut(string userId)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
+                    return "User not found!";
+                user.Token = null;
+                _repository.Save();
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        //
+
+        public async Task<List<string>> GetAppRoles()
+        {
+            var roles = await _roleManager.Roles.ToListAsync();
+            var roleNames = roles.Select(r => r.Name).ToList();
+            return roleNames;
+        }
+        public async Task<ApplicationUserDto?> GetUserByIdAsync(string userId)
+        {
+            var user = await _repository.User.GetUserByIdAsync(userId, trackChanges: false);
+            if (user == null)
+                return null;
+
+            return _mapper.Map<ApplicationUserDto>(user);
+        }
     }
 }

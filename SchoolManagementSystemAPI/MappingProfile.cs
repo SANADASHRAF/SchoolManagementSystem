@@ -10,7 +10,9 @@ namespace SchoolManagementSystemAPI
         public MappingProfile() 
         {
             CreateMap<UserForRegistrationDto, ApplicationUser>();
-        
+            CreateMap<ApplicationUser, ApplicationUserDto>()
+               .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.CityName))
+               .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ApplicationUserImage.Image.ImageUrl));
         }
 
     }

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +27,16 @@ namespace Shared.Dtos
         [Required(ErrorMessage = "City is required")]
         public int CityID { get; set; }
 
-        //[Required(ErrorMessage = "Image is required")]
-        //public long? ApplicationUserImageID { get; set; }
-
         [Required(ErrorMessage = "Username is required")]
         public string? UserName { get; init; }
 
         [Required(ErrorMessage = "Password is required")]
         public string? Password { get; init; }
+
+        [NotMapped]
+        [Compare("Password" , ErrorMessage ="password not match")]
+        [Required(ErrorMessage = "Password is required")]
+        public string? ConfirmPassword { get; init; }
 
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress]
@@ -43,6 +47,14 @@ namespace Shared.Dtos
         public string? PhoneNumber { get; init; }
 
         public ICollection<string>? Roles { get; init; }
+    }
+
+    public record UserImageDto
+    {
+        public string Id { get; set; }
+        [Required(ErrorMessage = "An image file is required.")]
+        [DataType(DataType.Upload)]
+        public IFormFile? Image { get; init; }
     }
     public record UserForAuthenticationDto
     {
@@ -63,14 +75,34 @@ namespace Shared.Dtos
 
     public record ChangePasswordDto
     {
-        [Required]
+        [Required(ErrorMessage = "UserName is required")]
         public string UserName { get; set; }
 
-        [Required]
+        [MinLength(10,ErrorMessage ="length must be greater that or equal 10 char")]
+        [Required (ErrorMessage = "OldPassword is required")]
         public string OldPassword { get; set; }
 
-        [Required]
+        [MinLength(10, ErrorMessage = "length must be greater that or equal 10 char")]
+        [Required(ErrorMessage = "NewPassword is required")]
         public string NewPassword { get; set; }
+        [NotMapped]
+        [Compare("NewPassword" , ErrorMessage ="password not match!")]
+        public string ConfirmNewPassword { get; set; }
+    }
+
+
+    public class ApplicationUserDto
+    {
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string Gender { get; set; }
+        public DateTime EnrollmentDate { get; set; }
+        public string? CityName { get; set; }
+        public string? ImageUrl { get; set; }
     }
 
 }

@@ -15,5 +15,15 @@ namespace Service.Contracts
         Task<string> CreateToken();
         Task<bool> AssignRoleToUserAsync(string userName, string role);
         Task<bool> ChangePasswordAsync(string userName, string oldPassword, string newPassword);
+
+        //
+        Task<string> SoftDeleteUser(string userId);
+        Task<string> LogedOut(string userId);
+
+        //
+
+
+        Task<ApplicationUserDto?> GetUserByIdAsync(string userId);
+        Task<List<string>> GetAppRoles();
     }
 }

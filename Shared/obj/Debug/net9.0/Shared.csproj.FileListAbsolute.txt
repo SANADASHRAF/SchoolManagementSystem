@@ -10,3 +10,4 @@ G:\SchoolManagementSystemAPI\SchoolManagementSystem\Shared\obj\Debug\net9.0\Shar
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Shared\obj\Debug\net9.0\refint\Shared.dll
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Shared\obj\Debug\net9.0\Shared.pdb
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Shared\obj\Debug\net9.0\ref\Shared.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\Shared\obj\Debug\net9.0\Shared.csproj.AssemblyReference.cache

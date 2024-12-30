@@ -25,6 +25,8 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "Enrollment date is required.")]
         public DateTime EnrollmentDate { get; set; }=DateTime.Now;
+        public bool IsDeleted { get; set; }=false;
+        public string? Token { get; set; }
 
         // Relationships
 

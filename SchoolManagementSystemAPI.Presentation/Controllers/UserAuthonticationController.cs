@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.Dtos;
@@ -24,7 +25,6 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
         } 
 
         [HttpPost (Name = "RegisterUser")]
-        [Authorize(Roles = "admin")]
         public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration)
         {
             try
@@ -50,7 +50,23 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
             }
 
         }
+        
+        [HttpPost(Name = "RegisterUserImage")]
+        public async Task<IActionResult> RegisterUserImage([FromForm] UserImageDto UserImage)
+        {
+            try
+            {
+                var result = await _service.imageService.UpdateuserImage(UserImage);
+                if (result == "Image updated successfully!")
+                    return Ok(new { Message = result });
 
+                return BadRequest(new { Error = result });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
 
         [HttpPost(Name ="login")]
         public async Task<IActionResult> login([FromBody] UserForAuthenticationDto user)
@@ -83,7 +99,7 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
         }
 
 
-        [HttpPost(Name = "ChangePassword")]
+        [HttpPut(Name = "ChangePassword")]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto changePasswordDto)
         {
             var result = await _service.userService.ChangePasswordAsync(changePasswordDto.UserName, changePasswordDto.OldPassword, changePasswordDto.NewPassword);
@@ -92,6 +108,76 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
            
 
             return Ok(new { message = "Password changed successfully." });
+        }
+
+        [HttpPut(Name = "Logout")]
+        public async Task<IActionResult> Logout(string userId)
+        {
+            try
+            {
+                var result = await _service.userService.LogedOut(userId);
+
+                if (result == null)
+                    return Ok("Loged Out Successfull!");
+
+                return StatusCode(500, $"some Thing went Wrong");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete(Name = "DeleteUser")]
+        public async Task<IActionResult> SoftDeleteUser(string userId)
+        {
+            try
+            {
+                var result = await _service.userService.SoftDeleteUser(userId);
+
+                if (result == "User deleted successfully!")
+                    return Ok(result);
+
+                return BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        //
+        [HttpGet(Name = "GetAppRoles")]
+        public async Task<IActionResult> GetAppRoles()
+        {
+            try
+            {
+                var Roles =await _service.userService.GetAppRoles();
+                return Ok(Roles);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet(Name = "GetUserById")]
+        public async Task<IActionResult> GetUserById(string id)
+        {
+            try
+            {
+                var user = await _service.userService.GetUserByIdAsync(id);
+                if (user == null)
+                    return NotFound( "User not found.");
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"An error occurred in {nameof(GetUserById)}: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { Error = "An error occurred while processing your request. Please try again later." });
+            }
         }
 
 

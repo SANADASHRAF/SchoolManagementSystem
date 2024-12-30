@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entities.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,5 +34,14 @@ namespace Repository
             }
             return true;
         }
+
+        public async Task<ApplicationUser?> GetUserByIdAsync(string userId, bool trackChanges)
+        {
+            return await FindByCondition(user => user.Id == userId, trackChanges)
+                .Include(u => u.City) 
+                .Include(u => u.ApplicationUserImage) 
+                .FirstOrDefaultAsync();
+        }
+
     }
 }
