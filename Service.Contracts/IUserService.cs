@@ -14,6 +14,7 @@ namespace Service.Contracts
         Task<bool> ValidateUser(UserForAuthenticationDto userForAuth);
         Task<string> CreateToken();
         Task<bool> AssignRoleToUserAsync(string userName, string role);
+        Task<bool> DeleteRoleToUserAsync(string userId, string role);
         Task<bool> ChangePasswordAsync(string userName, string oldPassword, string newPassword);
 
         //

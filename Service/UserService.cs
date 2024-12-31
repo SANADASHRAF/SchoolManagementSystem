@@ -129,7 +129,7 @@ namespace Service
                 issuer: jwtSettings["validIssuer"],
                 audience: jwtSettings["validAudience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(Convert.ToDouble(jwtSettings["expires"])),  // قراءة مدة صلاحية التوكن
+                expires: DateTime.Now.AddMinutes(Convert.ToDouble(jwtSettings["expires"])),
                 signingCredentials: signingCredentials
             );
             return tokenOptions;
@@ -163,6 +163,21 @@ namespace Service
             return true;
         }
 
+        public async Task<bool> DeleteRoleToUserAsync(string userId, string role)
+        {
+            var DeleteRole = await _repository.User.DeleteRoleToUserAsync(userId, role);
+            if (DeleteRole)
+            {
+                _logger.LogInfo($"Role {role} deleted successfully.");
+                return true;
+            }
+            else
+            {
+                _logger.LogWarn($"Failed to delete role {role}.");
+                return false;
+            }
+
+        }
 
         public async Task<bool> ChangePasswordAsync(string userName, string oldPassword, string newPassword)
         {
@@ -244,8 +259,12 @@ namespace Service
             var user = await _repository.User.GetUserByIdAsync(userId, trackChanges: false);
             if (user == null)
                 return null;
-
-            return _mapper.Map<ApplicationUserDto>(user);
+            var userRoles = await _userManager.GetRolesAsync(user);
+            var MapUser= _mapper.Map<ApplicationUserDto>(user);
+            MapUser.Role = userRoles.ToList();
+            return MapUser;
         }
+
+       
     }
 }

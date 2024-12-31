@@ -103,6 +103,8 @@ namespace Shared.Dtos
         public DateTime EnrollmentDate { get; set; }
         public string? CityName { get; set; }
         public string? ImageUrl { get; set; }
+        public string? Token { get; set; }
+        public List<string>? Role { get; set; }
     }
 
 }

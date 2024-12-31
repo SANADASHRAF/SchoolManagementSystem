@@ -35,6 +35,28 @@
   },
   {
     "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "DeleteRoleToUser",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/DeleteRoleToUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "DeleteRoleToUser"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
     "Method": "GetAppRoles",
     "RelativePath": "SchoolManagement/UserAuthentiaction/GetAppRoles",
     "HttpMethod": "GET",
@@ -60,6 +82,23 @@
     ],
     "ReturnTypes": [],
     "EndpointName": "GetUserById"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
+    "Method": "GetUsersByRoole",
+    "RelativePath": "SchoolManagement/UserAuthentiaction/GetUsersByRoole",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RoleName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetUsersByRoole"
   },
   {
     "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
@@ -149,6 +188,6 @@
       }
     ],
     "ReturnTypes": [],
-    "EndpointName": "DeleteUser"
+    "EndpointName": "SoftDeleteUser"
   }
 ]

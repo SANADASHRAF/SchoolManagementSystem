@@ -99,6 +99,9 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
         }
 
 
+        //
+
+
         [HttpPut(Name = "ChangePassword")]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto changePasswordDto)
         {
@@ -128,23 +131,6 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
             }
         }
 
-        [HttpDelete(Name = "DeleteUser")]
-        public async Task<IActionResult> SoftDeleteUser(string userId)
-        {
-            try
-            {
-                var result = await _service.userService.SoftDeleteUser(userId);
-
-                if (result == "User deleted successfully!")
-                    return Ok(result);
-
-                return BadRequest(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
 
         //
         [HttpGet(Name = "GetAppRoles")]
@@ -160,7 +146,7 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        
         [HttpGet(Name = "GetUserById")]
         public async Task<IActionResult> GetUserById(string id)
         {
@@ -179,6 +165,50 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
                     new { Error = "An error occurred while processing your request. Please try again later." });
             }
         }
+
+        [HttpGet(Name = "GetUsersByRoole")]
+        public async Task<IActionResult> GetUsersByRoole (string RoleName)
+        {
+            return Ok();
+        }
+
+        //
+
+        [HttpDelete(Name = "SoftDeleteUser")]
+        public async Task<IActionResult> SoftDeleteUser(string userId)
+        {
+            try
+            {
+                var result = await _service.userService.SoftDeleteUser(userId);
+
+                if (result == "User deleted successfully!")
+                    return Ok(result);
+
+                return BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpDelete(Name = "DeleteRoleToUser")]
+        public async Task<IActionResult> DeleteRoleToUser(string userId, string role)
+        {
+            try
+            {
+                var result = await _service.userService.DeleteRoleToUserAsync(userId, role);
+                if (!result)
+                    return BadRequest("Failed to delete role.");
+                return Ok(new { message = $"Role {role} successfully deleted from user." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
 
     }

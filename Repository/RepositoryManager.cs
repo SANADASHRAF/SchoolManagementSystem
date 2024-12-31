@@ -13,6 +13,7 @@ namespace Repository
    {
         public readonly RepositoryContext _repositoryContext;
         public readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly Lazy<IAdminRepository> _adminRepository;
         private readonly Lazy<IAcademicYearRepository> _academicYearRepository;
@@ -43,10 +44,12 @@ namespace Repository
         private readonly Lazy<IVideoRepository> _videoRepository;
         private readonly Lazy<IStudentExactYearRepository> _studentExactYear ;
 
-        public RepositoryManager(RepositoryContext repositoryContext , RoleManager<IdentityRole> roleManager)
+        public RepositoryManager(RepositoryContext repositoryContext , RoleManager<IdentityRole> roleManager ,
+            UserManager<ApplicationUser> userManager)
         {
             _repositoryContext = repositoryContext;
             _roleManager = roleManager;
+            _userManager = userManager;
 
             _adminRepository = new Lazy<IAdminRepository>(() => new AdminRepository(_repositoryContext));
             _academicYearRepository = new Lazy<IAcademicYearRepository>(() => new AcademicYearRepository(_repositoryContext));
@@ -73,7 +76,7 @@ namespace Repository
             _superAdminRepository = new Lazy<ISuperAdminRepository>(() => new SuperAdminRepository(_repositoryContext));
             _teacherRepository = new Lazy<ITeacherRepository>(() => new TeacherRepository(_repositoryContext));
             _termRepository = new Lazy<ITermRepository>(() => new TermRepository(_repositoryContext));
-            _userRepository = new Lazy<IUserRepository>(() => new UserRepository(_repositoryContext,_roleManager));
+            _userRepository = new Lazy<IUserRepository>(() => new UserRepository(_repositoryContext,_roleManager,_userManager));
             _videoRepository = new Lazy<IVideoRepository>(() => new VideoRepository(_repositoryContext));
             _studentExactYear = new Lazy<IStudentExactYearRepository>(() => new StudentExactYearRepository(_repositoryContext));
         }

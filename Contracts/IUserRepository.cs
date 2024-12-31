@@ -11,5 +11,6 @@ namespace Contracts
     {
         Task<bool> ValidateRolesAsync(ICollection<string>? roles);
         Task<ApplicationUser?> GetUserByIdAsync(string userId, bool trackChanges);
+        Task<bool> DeleteRoleToUserAsync(string userId, string role);
     }
 }

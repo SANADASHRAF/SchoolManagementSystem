@@ -13,6 +13,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service.contracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FE36E37-07F6-4290-9067-42B69C7A497A}|Contracts\\Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\contracts\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FE36E37-07F6-4290-9067-42B69C7A497A}|Contracts\\Contracts.csproj|solutionrelative:contracts\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\repository\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|solutionrelative:repository\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,16 +37,43 @@
           "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RepositoryManager.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\RepositoryManager.cs",
+              "RelativeDocumentMoniker": "Repository\\RepositoryManager.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\RepositoryManager.cs*",
+              "RelativeToolTip": "Repository\\RepositoryManager.cs*",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAQwE4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T21:21:18.191Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Contracts\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Contracts\\IUserRepository.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Contracts\\IUserRepository.cs*",
+              "RelativeToolTip": "Contracts\\IUserRepository.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T21:14:15.482Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "Repository\\UserRepository.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAIA6wDsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T15:03:54.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -42,9 +81,9 @@
               "Title": "IUserService.cs",
               "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\IUserService.cs",
               "RelativeDocumentMoniker": "Service.Contracts\\IUserService.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\IUserService.cs",
-              "RelativeToolTip": "Service.Contracts\\IUserService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAoAAAAAAAAAA==",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\IUserService.cs*",
+              "RelativeToolTip": "Service.Contracts\\IUserService.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T03:18:23.864Z",
               "EditorCaption": ""
@@ -57,7 +96,7 @@
               "RelativeDocumentMoniker": "Service\\UserService.cs",
               "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service\\UserService.cs*",
               "RelativeToolTip": "Service\\UserService.cs*",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAlwO0AAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwK8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T03:18:18.926Z",
               "EditorCaption": ""
@@ -68,9 +107,9 @@
               "Title": "UserAuthonticationController.cs",
               "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
               "RelativeDocumentMoniker": "SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs*",
-              "RelativeToolTip": "SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs*",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAYwJ0AAAAgAAAAAAAAAA==",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
+              "RelativeToolTip": "SchoolManagementSystemAPI.Presentation\\Controllers\\UserAuthonticationController.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAUwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T03:13:48.51Z",
               "EditorCaption": ""

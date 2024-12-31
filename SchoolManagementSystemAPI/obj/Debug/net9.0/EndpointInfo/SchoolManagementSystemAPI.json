@@ -197,28 +197,6 @@
         }
       }
     },
-    "/SchoolManagement/UserAuthentiaction/SoftDeleteUser": {
-      "delete": {
-        "tags": [
-          "UserAuthontication"
-        ],
-        "operationId": "DeleteUser",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/SchoolManagement/UserAuthentiaction/GetAppRoles": {
       "get": {
         "tags": [
@@ -241,6 +219,79 @@
         "parameters": [
           {
             "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/GetUsersByRoole": {
+      "get": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "GetUsersByRoole",
+        "parameters": [
+          {
+            "name": "RoleName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/SoftDeleteUser": {
+      "delete": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "SoftDeleteUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/UserAuthentiaction/DeleteRoleToUser": {
+      "delete": {
+        "tags": [
+          "UserAuthontication"
+        ],
+        "operationId": "DeleteRoleToUser",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "role",
             "in": "query",
             "schema": {
               "type": "string"
