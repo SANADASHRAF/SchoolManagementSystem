@@ -15,14 +15,14 @@ namespace Entities.Models
 
         [ForeignKey(nameof(Subject))]
         public int SubjectID { get; set; }
-        public Subject? Subject { get; set; }
+        public Subject Subject { get; set; }
 
         [ForeignKey(nameof(Term))]
         public int TermID { get; set; }
-        public Term? Term { get; set; }
+        public Term Term { get; set; }
 
         [ForeignKey(nameof(AcademicYear))]
         public int AcademicYearID { get; set; }
-        public AcademicYear? AcademicYear { get; set; }
+        public AcademicYear AcademicYear { get; set; }
     }
 }
