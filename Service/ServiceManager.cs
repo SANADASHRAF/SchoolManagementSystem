@@ -42,6 +42,7 @@ namespace Service
         private readonly Lazy<ITermService> _termService;
         private readonly Lazy<IUserService> _userService;
         private readonly Lazy<IVideoService> _videoService ;
+        private readonly Lazy<ISubjectTermService> _subjectTermService;
 
    
 
@@ -71,13 +72,14 @@ namespace Service
             _studentExactYearService = new Lazy<IStudentExactYearService>(() => new StudentExactYearService(repositoryManager, logger));
             _subjectSpecializationService = new Lazy<ISubjectSpecializationService>(() => new SubjectSpecializationService(repositoryManager, logger));
             _studentService = new Lazy<IStudentService>(() => new StudentService(repositoryManager, logger));
-            _subjectService = new Lazy<ISubjectService>(() => new SubjectService(repositoryManager, logger));
+            _subjectService = new Lazy<ISubjectService>(() => new SubjectService(repositoryManager, mapper, logger));
             _superAdminService = new Lazy<ISuperAdminService>(() => new SuperAdminService(repositoryManager, logger));
             _teacherService = new Lazy<ITeacherService>(() => new TeacherService(repositoryManager, logger));
             _termService = new Lazy<ITermService>(() => new TermService(repositoryManager, logger));
             _userService = new Lazy<IUserService>(() => new UserService(repositoryManager, logger, mapper, userManager,configuration,roleManager));
             _videoService = new Lazy<IVideoService>(() => new VideoService(repositoryManager, logger));
-            
+            _subjectTermService = new Lazy<ISubjectTermService>(() => new SubjectTermService(repositoryManager, logger));
+
         }
         public IAcademicYearService AcademicYearService => _academicYear.Value;
         public IAdminService AdminService => _adminService.Value;
@@ -107,6 +109,7 @@ namespace Service
         public ITermService termService => _termService.Value;
         public IUserService userService => _userService.Value;
         public IVideoService videoService => _videoService.Value;
-       
+        public ISubjectTermService subjectTermService => _subjectTermService.Value;
+
     }
 }

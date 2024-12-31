@@ -36,6 +36,7 @@ namespace Service.Contracts
         IUserService userService { get; }
         IVideoService videoService { get; }
         IStudentExactYearService studentExactYearService { get; }
+        ISubjectTermService subjectTermService { get; }
 
 
             

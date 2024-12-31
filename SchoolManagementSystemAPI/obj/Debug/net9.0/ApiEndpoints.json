@@ -1,5 +1,33 @@
 [
   {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.SubjectsController",
+    "Method": "GetAllSubjects",
+    "RelativePath": "SchoolManagement/SubjectsController/GetAllSubjects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetAllSubjects"
+  },
+  {
+    "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.SubjectsController",
+    "Method": "GetSubjectById",
+    "RelativePath": "SchoolManagement/SubjectsController/GetSubjectById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "subjectId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetSubjectById"
+  },
+  {
     "ContainingType": "SchoolManagementSystemAPI.Presentation.Controllers.UserAuthonticationController",
     "Method": "AssignRole",
     "RelativePath": "SchoolManagement/UserAuthentiaction/AssignRole",

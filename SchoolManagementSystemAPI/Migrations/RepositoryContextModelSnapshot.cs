@@ -1065,7 +1065,7 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     b.HasIndex("TermID");
 
-                    b.ToTable("ssubjectTerm");
+                    b.ToTable("subjectTerm");
                 });
 
             modelBuilder.Entity("Entities.Models.SuperAdmin", b =>

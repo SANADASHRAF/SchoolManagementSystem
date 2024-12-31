@@ -5,6 +5,42 @@
     "version": "1.0"
   },
   "paths": {
+    "/SchoolManagement/SubjectsController/GetAllSubjects": {
+      "get": {
+        "tags": [
+          "Subjects"
+        ],
+        "operationId": "GetAllSubjects",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/SchoolManagement/SubjectsController/GetSubjectById": {
+      "get": {
+        "tags": [
+          "Subjects"
+        ],
+        "operationId": "GetSubjectById",
+        "parameters": [
+          {
+            "name": "subjectId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/SchoolManagement/UserAuthentiaction/RegisterUser": {
       "post": {
         "tags": [

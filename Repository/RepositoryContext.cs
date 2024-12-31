@@ -49,7 +49,7 @@ namespace Repository
         public DbSet<Book> books { get; set; }
         public DbSet<ApplicationUserImage> applicationUserImages { get; set; }
         public DbSet<StudentExactYear> studentExactYears { get; set; }
-        public DbSet<SubjectTerm> ssubjectTerm { get; set; }
+        public DbSet<SubjectTerm> subjectTerm { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
