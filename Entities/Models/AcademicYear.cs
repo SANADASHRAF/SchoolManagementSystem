@@ -14,12 +14,13 @@ namespace Entities.Models
         public int YearID { get; set; }
 
         [Required(ErrorMessage = "Year name is required.")]
-        public string YearName { get; set; }
+        public string? YearName { get; set; }
 
-        [Required(ErrorMessage = "Start date is required.")]
+        [Required(ErrorMessage = "Grade level is required.")]
+        public string? GradeLevel { get; set; }
+
         public DateTime StartDate { get; set; }
 
-        [Required(ErrorMessage = "End date is required.")]
         public DateTime EndDate { get; set; }
         public DateTime? CreateDate { get; set; } =DateTime.Now;
 
@@ -32,9 +33,9 @@ namespace Entities.Models
         public ICollection<Exam>? exams { get; set; }
         public ICollection<Homework>? homeworks { get; set; }
         public ICollection<Lesson>? lessons { get; set; }
-        public ICollection<Subject>? subjects { get; set; }
         public ICollection<SubjectSpecialization>? subjectSpecializations { get; set; }
         public ICollection<StudentExactYear>? studentExactYears { get; set; }
+        public ICollection<SubjectTerm>? SubjectTerms { get; set; }
 
 
     }

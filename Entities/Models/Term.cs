@@ -14,7 +14,7 @@ namespace Entities.Models
         public int TermID { get; set; }
 
         [Required(ErrorMessage = "Term name is required.")]
-        public string TermName { get; set; }
+        public string? TermName { get; set; }
 
         [Required(ErrorMessage = "Start date is required.")]
         public DateTime StartDate { get; set; }
@@ -23,8 +23,8 @@ namespace Entities.Models
         public DateTime EndDate { get; set; }
         public DateTime? CreateDate { get; set; } = DateTime.Now;
 
-        // Relationships
-        public ICollection<AcademicYear> AcademicYears { get; set; }
+        // 
+
         public ICollection<Attendance>? Attendances { get; set; }
         public ICollection<Book>? books { get; set; }
         public ICollection<ClassSchedule>? classSchedules { get; set; }
@@ -32,6 +32,7 @@ namespace Entities.Models
         public ICollection<Homework>? homeworks { get; set; }
         public ICollection<Lesson>? lessons { get; set; }
         public ICollection<SubjectSpecialization>? subjectSpecializations { get; set; }
+        public ICollection<SubjectTerm>? SubjectTerms { get; set; }
 
 
     }

@@ -25,15 +25,8 @@ namespace Entities.Models
         public int DepartmentID { get; set; }
         public Department Department { get; set; }
 
-        [ForeignKey(nameof(AcademicYear))]
-        public int AcademicYearID { get; set; }
-        public AcademicYear AcademicYear { get; set; }
-
-        [ForeignKey(nameof(Term))]
-        public int TermID { get; set; }
-        public Term Term { get; set; }
-
         public ICollection<Lesson> Lessons { get; set; }
         public ICollection<Class> Classes { get; set; }
+        public ICollection<SubjectTerm> SubjectTerms { get; set; }
     }
 }
