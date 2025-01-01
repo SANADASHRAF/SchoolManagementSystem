@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,24 @@ namespace Repository
         : base(repositoryContext)
         {
         }
+
+        public async Task<IEnumerable<Events>> GetAllEventsAsync(bool trackChanges) =>
+        await FindAll(trackChanges)
+            .Include(e => e.EventsImages)
+            .ThenInclude(ei => ei.Image)
+            .Include(e => e.Videos)
+            .ThenInclude(ev => ev.Video)
+            .ToListAsync();
+
+        public async Task<Events> GetEventByIdAsync(long eventId, bool trackChanges) =>
+            await FindByCondition(e => e.EventID == eventId, trackChanges)
+                .Include(e => e.EventsImages)
+                .ThenInclude(ei => ei.Image)
+                .Include(e => e.Videos)
+                .ThenInclude(ev => ev.Video)
+                .FirstOrDefaultAsync();
+
+        public void CreateEvent(Events eventEntity) => Create(eventEntity);
+
     }
 }

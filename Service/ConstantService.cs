@@ -93,7 +93,13 @@ namespace Service
             {
                 var classroom = await _repository.classroom.Include(x=>x.AcademicYear).ToListAsync();
                 
-                return _mapper.Map<IEnumerable<ClassroomDTO>>(classroom);
+                var classroomDto = _mapper.Map<IEnumerable<ClassroomDTO>>(classroom);
+                foreach (var item in classroomDto)
+                {
+                    item.AcademicYearName = classroom.FirstOrDefault(x => x.ClassroomID == item.ClassroomID).AcademicYear.AcademicYearName;
+                    item.YearID = classroom.FirstOrDefault(x => x.ClassroomID == item.ClassroomID).AcademicYear.YearID;
+                }
+                return classroomDto;
                
             }
             catch (Exception ex)

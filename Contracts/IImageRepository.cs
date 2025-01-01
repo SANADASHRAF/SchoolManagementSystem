@@ -11,13 +11,14 @@ namespace Contracts
     public interface IImageRepository
     {
 
-        public void CheckDirectoryExist(string directoryPath);
+        void CheckDirectoryExist(string directoryPath);
 
-        public Task<string> UploadImageToServer(IFormFile image, string fileName);
+        Task<string> UploadImageToServer(IFormFile image, string fileName);
 
-        public Task<string> DeleteExistingUserImage(ApplicationUser user);
+        Task<string> DeleteExistingUserImage(ApplicationUser user);
 
-        public Task<string> AddUserImageToDatabase(ApplicationUser user, string imageFileName);
+        Task<string> AddUserImageToDatabase(ApplicationUser user, string imageFileName);
+        Task<Image> GetImageByIdAsync(long imageId, bool trackChanges);
 
 
     }

@@ -15,6 +15,7 @@ namespace Entities.Models
         public string? VideoTitle { get; set; }
         public string? VideoDiscription { get; set; }
         public string VideoUrl { get; set; }
+        public string VideoName { get; set; }
         public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         // Relationships

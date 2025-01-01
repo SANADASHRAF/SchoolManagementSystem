@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using Image = Entities.Models.Image;
 
 namespace Repository
 {
@@ -29,7 +30,6 @@ namespace Repository
                 Directory.CreateDirectory(directoryPath);
             }
         }
-
 
         public async Task<string> UploadImageToServer(IFormFile image, string fileName)
         {
@@ -52,28 +52,7 @@ namespace Repository
                 return ex.Message;
             }
         }
-
-
-        public async Task<string> DeleteExistingUserImage(ApplicationUser user)
-        {
-            if (user.ApplicationUserImage == null)
-                return null;
-
-            var oldImagePath = Path.Combine(@"h:\root\home\hattanfjh-001\www\hawisports\wwwroot\image\", user.ApplicationUserImage.Image.ImageUrl);
-            if (File.Exists(oldImagePath))
-            {
-                File.Delete(oldImagePath);
-            }
-
-          
-            RepositoryContext.Images.Remove(user.ApplicationUserImage.Image);
-            RepositoryContext.applicationUserImages.Remove(user.ApplicationUserImage);
-            await RepositoryContext.SaveChangesAsync();
-
-            return null;
-        }
-
-
+      
         public async Task<string> AddUserImageToDatabase(ApplicationUser user, string imageFileName)
         {
             try
@@ -110,6 +89,31 @@ namespace Repository
             {
                 return $"Error adding image to database: {ex.Message}";
             }
+        }
+
+        public async Task<string> DeleteExistingUserImage(ApplicationUser user)
+        {
+            if (user.ApplicationUserImage == null)
+                return null;
+
+            var oldImagePath = Path.Combine(@"h:\root\home\hattanfjh-001\www\hawisports\wwwroot\image\", user.ApplicationUserImage.Image.ImageUrl);
+            if (File.Exists(oldImagePath))
+            {
+                File.Delete(oldImagePath);
+            }
+
+
+            RepositoryContext.Images.Remove(user.ApplicationUserImage.Image);
+            RepositoryContext.applicationUserImages.Remove(user.ApplicationUserImage);
+            await RepositoryContext.SaveChangesAsync();
+
+            return null;
+        }
+
+        public async Task<Image> GetImageByIdAsync(long imageId, bool trackChanges)
+        {
+            return await FindByCondition(i => i.ImageID == imageId, trackChanges)
+                .FirstOrDefaultAsync();
         }
 
 

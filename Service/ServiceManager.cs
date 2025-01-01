@@ -60,7 +60,7 @@ namespace Service
             _classScheduleService = new Lazy<IClassScheduleService>(() => new ClassScheduleService(repositoryManager, logger));
             _classService = new Lazy<IClassService>(() => new ClassService(repositoryManager, logger));
             _departmentService = new Lazy<IDepartmentService>(() => new DepartmentService(repositoryManager, logger));
-            _eventsService = new Lazy<IEventsService>(() => new EventsService(repositoryManager, logger));
+            _eventsService = new Lazy<IEventsService>(() => new EventsService(repositoryManager,mapper, logger));
             _examService = new Lazy<IExamService>(() => new ExamService(repositoryManager, logger));
             _examSubmissionService = new Lazy<IExamSubmissionService>(() => new ExamSubmissionService(repositoryManager, logger));
             _gradeService = new Lazy<IGradeService>(() => new GradeService(repositoryManager, logger));

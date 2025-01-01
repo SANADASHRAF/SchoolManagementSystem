@@ -43,5 +43,6 @@ namespace Shared.Dtos
         public string ClassroomName { get; set; }
         public int NumberOfStudents { get; set; }
         public String AcademicYearName { get; set; }
+        public int YearID { get; set; }
     }
 }

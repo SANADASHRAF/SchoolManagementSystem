@@ -11,6 +11,7 @@ namespace SchoolManagementSystemAPI
         {
             //sourse >> destination
             CreateMap<UserForRegistrationDto, ApplicationUser>();
+
             CreateMap<ApplicationUser, ApplicationUserDto>()
                .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.CityName))
                .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ApplicationUserImage.Image.ImageUrl));
@@ -25,7 +26,7 @@ namespace SchoolManagementSystemAPI
             CreateMap<SubjectTermForCreationDto, SubjectTerm>();
             CreateMap<SubjectTermForUpdateDto, SubjectTerm>();
 
-            // Cinstants
+            // Constants
             CreateMap<AcademicYear, AcademicYearDto>();
             CreateMap<City, CityDto>();
             CreateMap<Classperiod, ClassPeriodDto>();
@@ -34,6 +35,12 @@ namespace SchoolManagementSystemAPI
             CreateMap<Classroom, ClassroomDTO>();
 
 
+            //events
+            CreateMap<Events, EventDto>()
+            .ForMember(dest => dest.Images, opt => opt.MapFrom(src => src.EventsImages.Select(ei => ei.Image.ImageUrl)))
+            .ForMember(dest => dest.Videos, opt => opt.MapFrom(src => src.Videos.Select(ev => ev.Video.VideoUrl)));
+
+            CreateMap<EventForCreationDto, Events>();
         }
 
     }
