@@ -1,0 +1,28 @@
+# Ignore bin and obj folders
+/bin/
+/obj/
+
+# Ignore Visual Studio specific files
+.vs/
+.vscode/
+.idea/
+
+# Ignore compiled DLLs
+*.dll
+*.pdb
+
+# Ignore build output
+*.exe
+*.app
+*.out
+*.o
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore user-specific files
+*.user
+*.userosscache
+
+.vs/SchoolManagementSystemAPI/DesignTimeBuild/.dtbcache.v2
