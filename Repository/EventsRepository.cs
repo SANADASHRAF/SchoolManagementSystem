@@ -22,6 +22,7 @@ namespace Repository
             .ThenInclude(ei => ei.Image)
             .Include(e => e.Videos)
             .ThenInclude(ev => ev.Video)
+            .Where(e => e.Isdeleted == false)
             .ToListAsync();
 
         public async Task<Events> GetEventByIdAsync(long eventId, bool trackChanges) =>
@@ -30,6 +31,7 @@ namespace Repository
                 .ThenInclude(ei => ei.Image)
                 .Include(e => e.Videos)
                 .ThenInclude(ev => ev.Video)
+              .Where(e => e.Isdeleted == false)
                 .FirstOrDefaultAsync();
 
         public void CreateEvent(Events eventEntity) => Create(eventEntity);
