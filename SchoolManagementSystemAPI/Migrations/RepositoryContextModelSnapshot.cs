@@ -45,22 +45,12 @@ namespace SchoolManagementSystemAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("YearID"));
 
+                    b.Property<string>("AcademicYearName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("GradeLevel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("YearName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("YearID");
 
@@ -396,6 +386,40 @@ namespace SchoolManagementSystemAPI.Migrations
                     b.HasIndex("TermID");
 
                     b.ToTable("ClassSchedules");
+                });
+
+            modelBuilder.Entity("Entities.Models.Classperiod", b =>
+                {
+                    b.Property<int>("ClassperiodId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClassperiodId"));
+
+                    b.Property<string>("ClassperiodName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ClassperiodId");
+
+                    b.ToTable("Classperiod");
+                });
+
+            modelBuilder.Entity("Entities.Models.Day", b =>
+                {
+                    b.Property<int>("DayId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DayId"));
+
+                    b.Property<string>("DayeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DayId");
+
+                    b.ToTable("day");
                 });
 
             modelBuilder.Entity("Entities.Models.Department", b =>

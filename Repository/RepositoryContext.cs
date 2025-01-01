@@ -50,7 +50,9 @@ namespace Repository
         public DbSet<ApplicationUserImage> applicationUserImages { get; set; }
         public DbSet<StudentExactYear> studentExactYears { get; set; }
         public DbSet<SubjectTerm> subjectTerm { get; set; }
-
+        public DbSet<Classperiod> Classperiod { get; set; }
+        public DbSet<Day> day { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

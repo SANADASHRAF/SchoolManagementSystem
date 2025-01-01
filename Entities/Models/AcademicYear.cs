@@ -13,15 +13,12 @@ namespace Entities.Models
         [Key]
         public int YearID { get; set; }
 
-        [Required(ErrorMessage = "Year name is required.")]
-        public string? YearName { get; set; }
+        //[Required(ErrorMessage = "Year name is required.")]
+        //public string? YearName { get; set; }
 
-        [Required(ErrorMessage = "Grade level is required.")]
-        public string? GradeLevel { get; set; }
+        [Required(ErrorMessage = "AcademicYear Name is required.")]
+        public string? AcademicYearName { get; set; }
 
-        public DateTime StartDate { get; set; }
-
-        public DateTime EndDate { get; set; }
         public DateTime? CreateDate { get; set; } =DateTime.Now;
 
         // Relationships
