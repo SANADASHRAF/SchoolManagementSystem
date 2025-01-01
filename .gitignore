@@ -1,28 +1,62 @@
 # Ignore bin and obj folders
-/bin/
-/obj/
+**/bin/
+**/obj/
+
+# Ignore build output files
+*.dll
+*.exe
+*.app
+*.out
+*.o
+*.pdb
+*.log
+*.tmp
+*.cache
 
 # Ignore Visual Studio specific files
 .vs/
 .vscode/
 .idea/
-
-# Ignore compiled DLLs
-*.dll
-*.pdb
-
-# Ignore build output
-*.exe
-*.app
-*.out
-*.o
-
-# Ignore temporary files
-*.log
-*.tmp
-
-# Ignore user-specific files
 *.user
+*.suo
 *.userosscache
+*.sln.docstates
+*.sln.ide.local
 
-.vs/SchoolManagementSystemAPI/DesignTimeBuild/.dtbcache.v2
+# Ignore Rider IDE specific files
+.idea/
+*.iml
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.props
+*.targets
+
+# Ignore temporary files and locks
+~$*
+*~.tmp
+*.lock.json
+*.swp
+*.DS_Store
+
+# Ignore publish output
+wwwroot/
+publish/
+
+# Ignore migration and EF Core files (optional)
+Migrations/
+SchoolManagementSystemAPI/Migrations/*.cs
+
+# Ignore secrets and sensitive configuration files
+appsettings*.json
+.env
+secrets.json
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore compiled outputs
+!Shared/Dtos/

@@ -52,6 +52,7 @@ namespace Repository
         public DbSet<SubjectTerm> subjectTerm { get; set; }
         public DbSet<Classperiod> Classperiod { get; set; }
         public DbSet<Day> day { get; set; }
+        public DbSet<Classroom> classroom { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
