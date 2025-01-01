@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi.presentation\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|solutionrelative:schoolmanagementsystemapi.presentation\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FDA4C7B1-B8D3-4152-B336-591D39CE3857}|Service\\Service.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service\\subjecttermservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDA4C7B1-B8D3-4152-B336-591D39CE3857}|Service\\Service.csproj|solutionrelative:service\\subjecttermservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi.presentation\\controllers\\subjecttermscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBE70FE1-6154-40B4-8742-880047ACFCB1}|SchoolManagementSystemAPI.Presentation\\SchoolManagementSystemAPI.Presentation.csproj|solutionrelative:schoolmanagementsystemapi.presentation\\controllers\\subjecttermscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service.contracts\\isubjecttermservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\isubjecttermservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F094DFF7-07BB-41F1-B160-AC1C03979FEB}|SchoolManagementSystemAPI\\SchoolManagementSystemAPI.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\schoolmanagementsystemapi\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F094DFF7-07BB-41F1-B160-AC1C03979FEB}|SchoolManagementSystemAPI\\SchoolManagementSystemAPI.csproj|solutionrelative:schoolmanagementsystemapi\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8C2366B8-96BB-4D6E-A809-A5E7CAFF99B4}|Shared\\Shared.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\shared\\dtos\\subjectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C2366B8-96BB-4D6E-A809-A5E7CAFF99B4}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\subjectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDA4C7B1-B8D3-4152-B336-591D39CE3857}|Service\\Service.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service\\subjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDA4C7B1-B8D3-4152-B336-591D39CE3857}|Service\\Service.csproj|solutionrelative:service\\subjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\repository\\subjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16B86FBC-F076-4598-8C9B-9B3DA7908B53}|Repository\\Repository.csproj|solutionrelative:repository\\subjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\service.contracts\\isubjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9288E62C-F3A7-4F4E-8EC7-3897D98ADECA}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\isubjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FE36E37-07F6-4290-9067-42B69C7A497A}|Contracts\\Contracts.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\contracts\\isubjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FE36E37-07F6-4290-9067-42B69C7A497A}|Contracts\\Contracts.csproj|solutionrelative:contracts\\isubjectrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C2366B8-96BB-4D6E-A809-A5E7CAFF99B4}|Shared\\Shared.csproj|g:\\schoolmanagementsystemapi\\schoolmanagementsystem\\shared\\dtos\\subjecttermdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C2366B8-96BB-4D6E-A809-A5E7CAFF99B4}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\subjecttermdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SubjectsController.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectsController.cs",
-              "RelativeDocumentMoniker": "SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectsController.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectsController.cs*",
-              "RelativeToolTip": "SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectsController.cs*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T23:07:05.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SubjectService.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service\\SubjectService.cs",
-              "RelativeDocumentMoniker": "Service\\SubjectService.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service\\SubjectService.cs",
-              "RelativeToolTip": "Service\\SubjectService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwDEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T23:04:06.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ISubjectService.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\ISubjectService.cs",
-              "RelativeDocumentMoniker": "Service.Contracts\\ISubjectService.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\ISubjectService.cs",
-              "RelativeToolTip": "Service.Contracts\\ISubjectService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T23:03:24.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SubjectRepository.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\SubjectRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\SubjectRepository.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\SubjectRepository.cs",
-              "RelativeToolTip": "Repository\\SubjectRepository.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T22:59:14.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ISubjectRepository.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Contracts\\ISubjectRepository.cs",
-              "RelativeDocumentMoniker": "Contracts\\ISubjectRepository.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Contracts\\ISubjectRepository.cs",
-              "RelativeToolTip": "Contracts\\ISubjectRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T22:58:07.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "SchoolManagementSystemAPI\\MappingProfile.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\MappingProfile.cs",
-              "RelativeToolTip": "SchoolManagementSystemAPI\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Title": "SubjectTermsController.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectTermsController.cs",
+              "RelativeDocumentMoniker": "SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectTermsController.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectTermsController.cs",
+              "RelativeToolTip": "SchoolManagementSystemAPI.Presentation\\Controllers\\SubjectTermsController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwv3gAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T22:56:42.589Z",
+              "WhenOpened": "2025-01-01T00:30:26.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SubjectTermService.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service\\SubjectTermService.cs",
+              "RelativeDocumentMoniker": "Service\\SubjectTermService.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service\\SubjectTermService.cs",
+              "RelativeToolTip": "Service\\SubjectTermService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvxEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T00:28:09.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SubjectDto.cs",
-              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Shared\\Dtos\\SubjectDto.cs",
-              "RelativeDocumentMoniker": "Shared\\Dtos\\SubjectDto.cs",
-              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Shared\\Dtos\\SubjectDto.cs",
-              "RelativeToolTip": "Shared\\Dtos\\SubjectDto.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAcwB0AAAAlAAAAAAAAAA==",
+              "Title": "ISubjectTermService.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\ISubjectTermService.cs",
+              "RelativeDocumentMoniker": "Service.Contracts\\ISubjectTermService.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\ISubjectTermService.cs",
+              "RelativeToolTip": "Service.Contracts\\ISubjectTermService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T22:55:28.98Z",
+              "WhenOpened": "2025-01-01T00:27:38.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "SchoolManagementSystemAPI\\MappingProfile.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\SchoolManagementSystemAPI\\MappingProfile.cs",
+              "RelativeToolTip": "SchoolManagementSystemAPI\\MappingProfile.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T00:12:30.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SubjectTermDTO.cs",
+              "DocumentMoniker": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Shared\\Dtos\\SubjectTermDTO.cs",
+              "RelativeDocumentMoniker": "Shared\\Dtos\\SubjectTermDTO.cs",
+              "ToolTip": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Shared\\Dtos\\SubjectTermDTO.cs",
+              "RelativeToolTip": "Shared\\Dtos\\SubjectTermDTO.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T00:10:42.152Z",
               "EditorCaption": ""
             }
           ]

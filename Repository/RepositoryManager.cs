@@ -43,6 +43,7 @@ namespace Repository
         private readonly Lazy<IUserRepository> _userRepository;
         private readonly Lazy<IVideoRepository> _videoRepository;
         private readonly Lazy<IStudentExactYearRepository> _studentExactYear ;
+        private readonly Lazy<ISubjectTermRepository> _subjectTerm;
 
         public RepositoryManager(RepositoryContext repositoryContext , RoleManager<IdentityRole> roleManager ,
             UserManager<ApplicationUser> userManager)
@@ -79,6 +80,7 @@ namespace Repository
             _userRepository = new Lazy<IUserRepository>(() => new UserRepository(_repositoryContext,_roleManager,_userManager));
             _videoRepository = new Lazy<IVideoRepository>(() => new VideoRepository(_repositoryContext));
             _studentExactYear = new Lazy<IStudentExactYearRepository>(() => new StudentExactYearRepository(_repositoryContext));
+            _subjectTerm = new Lazy<ISubjectTermRepository>(() => new SubjectTermRepository(_repositoryContext));
         }
         
         public IAdminRepository Admin => _adminRepository.Value;
@@ -109,6 +111,7 @@ namespace Repository
         public IUserRepository User => _userRepository.Value;
         public IVideoRepository Video => _videoRepository.Value;
         public IStudentExactYearRepository StudentExactYear => _studentExactYear.Value;
+        public ISubjectTermRepository SubjectTerm => _subjectTerm.Value;
 
         public void Save() => _repositoryContext.SaveChanges();
     }

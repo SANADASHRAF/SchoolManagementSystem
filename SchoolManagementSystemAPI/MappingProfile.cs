@@ -9,6 +9,7 @@ namespace SchoolManagementSystemAPI
     {
         public MappingProfile() 
         {
+            //sourse >> destination
             CreateMap<UserForRegistrationDto, ApplicationUser>();
             CreateMap<ApplicationUser, ApplicationUserDto>()
                .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.CityName))
@@ -18,7 +19,13 @@ namespace SchoolManagementSystemAPI
             CreateMap<Subject, SubjectDto>().ReverseMap();
             CreateMap<SubjectForCreationDto, Subject>();
             CreateMap<SubjectForUpdateDto, Subject>();
-            
+
+            //SubjectTerm
+            CreateMap<SubjectTerm, SubjectTermDto>().ReverseMap();
+            CreateMap<SubjectTermForCreationDto, SubjectTerm>();
+            CreateMap<SubjectTermForUpdateDto, SubjectTerm>();
+
+
         }
 
     }

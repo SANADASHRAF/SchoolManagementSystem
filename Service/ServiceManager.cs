@@ -78,7 +78,7 @@ namespace Service
             _termService = new Lazy<ITermService>(() => new TermService(repositoryManager, logger));
             _userService = new Lazy<IUserService>(() => new UserService(repositoryManager, logger, mapper, userManager,configuration,roleManager));
             _videoService = new Lazy<IVideoService>(() => new VideoService(repositoryManager, logger));
-            _subjectTermService = new Lazy<ISubjectTermService>(() => new SubjectTermService(repositoryManager, logger));
+            _subjectTermService = new Lazy<ISubjectTermService>(() => new SubjectTermService(repositoryManager, mapper, logger));
 
         }
         public IAcademicYearService AcademicYearService => _academicYear.Value;

@@ -36,6 +36,7 @@ namespace Contracts
         IUserRepository User { get; }
         IVideoRepository Video {  get; }
         IStudentExactYearRepository  StudentExactYear {  get; }
+        ISubjectTermRepository SubjectTerm {  get; }
         void Save();
 
     }
