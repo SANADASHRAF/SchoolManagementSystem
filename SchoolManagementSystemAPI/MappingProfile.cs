@@ -25,6 +25,13 @@ namespace SchoolManagementSystemAPI
             CreateMap<SubjectTermForCreationDto, SubjectTerm>();
             CreateMap<SubjectTermForUpdateDto, SubjectTerm>();
 
+            // constants
+            CreateMap<AcademicYear, AcademicYearDto>();
+            CreateMap<City, CityDto>();
+            CreateMap<Classperiod, ClassPeriodDto>();
+            CreateMap<Day, DayDto>();
+            CreateMap<Term, TermDto>();
+
 
         }
 

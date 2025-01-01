@@ -14,3 +14,5 @@ G:\SchoolManagementSystemAPI\SchoolManagementSystem\Service.Contracts\bin\Debug\
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Service.Contracts\bin\Debug\net9.0\Shared.pdb
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Service.Contracts\obj\Debug\net9.0\Service.Contracts.csproj.AssemblyReference.cache
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\Service.Contracts\obj\Debug\net9.0\Service..DEC3DE55.Up2Date
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\Service.Contracts\bin\Debug\net9.0\Entities.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\Service.Contracts\bin\Debug\net9.0\Entities.pdb

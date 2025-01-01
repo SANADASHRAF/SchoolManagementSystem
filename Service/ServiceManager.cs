@@ -3,6 +3,7 @@ using Contracts;
 using Entities.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Repository;
 using Service.Contracts;
 using System;
 using System.Collections.Generic;
@@ -43,12 +44,15 @@ namespace Service
         private readonly Lazy<IUserService> _userService;
         private readonly Lazy<IVideoService> _videoService ;
         private readonly Lazy<ISubjectTermService> _subjectTermService;
+        private readonly Lazy<IConstantsService> _constantsService;
+
+
 
    
 
         public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger ,
                               IMapper mapper, UserManager<ApplicationUser> userManager, IConfiguration configuration,
-                              RoleManager<IdentityRole> roleManager)
+                              RoleManager<IdentityRole> roleManager,RepositoryContext context)
         {
             _academicYear = new Lazy<IAcademicYearService>(() => new AcademicYearService(repositoryManager, logger));
             _adminService = new Lazy<IAdminService>(() => new AdminService(repositoryManager, logger));
@@ -79,6 +83,7 @@ namespace Service
             _userService = new Lazy<IUserService>(() => new UserService(repositoryManager, logger, mapper, userManager,configuration,roleManager));
             _videoService = new Lazy<IVideoService>(() => new VideoService(repositoryManager, logger));
             _subjectTermService = new Lazy<ISubjectTermService>(() => new SubjectTermService(repositoryManager, mapper, logger));
+            _constantsService = new Lazy<IConstantsService>(() => new ConstantsService(mapper,context));
 
         }
         public IAcademicYearService AcademicYearService => _academicYear.Value;
@@ -110,6 +115,7 @@ namespace Service
         public IUserService userService => _userService.Value;
         public IVideoService videoService => _videoService.Value;
         public ISubjectTermService subjectTermService => _subjectTermService.Value;
+        public IConstantsService constantsService => _constantsService.Value;
 
     }
 }

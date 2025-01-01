@@ -2426,10 +2426,26 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Contracts": "1.0.0",
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
+      },
       "Service.Contracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Entities": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.0",
           "Shared": "1.0.0"
         },
@@ -7227,6 +7243,11 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
+    },
     "Service.Contracts/1.0.0": {
       "type": "project",
       "path": "../Service.Contracts/Service.Contracts.csproj",
@@ -7242,6 +7263,7 @@
     "net9.0": [
       "Contracts >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
+      "Repository >= 1.0.0",
       "Service.Contracts >= 1.0.0"
     ]
   },
@@ -7280,6 +7302,9 @@
           "projectReferences": {
             "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Contracts\\Contracts.csproj": {
               "projectPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Contracts\\Contracts.csproj"
+            },
+            "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\Repository.csproj": {
+              "projectPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Repository\\Repository.csproj"
             },
             "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\Service.Contracts.csproj": {
               "projectPath": "G:\\SchoolManagementSystemAPI\\SchoolManagementSystem\\Service.Contracts\\Service.Contracts.csproj"

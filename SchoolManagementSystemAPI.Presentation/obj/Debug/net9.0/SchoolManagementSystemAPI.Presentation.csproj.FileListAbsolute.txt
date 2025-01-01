@@ -20,3 +20,5 @@ G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI.Pr
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI.Presentation\bin\Debug\net9.0\Entities.dll
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI.Presentation\bin\Debug\net9.0\Contracts.pdb
 G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI.Presentation\bin\Debug\net9.0\Entities.pdb
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI.Presentation\bin\Debug\net9.0\Repository.dll
+G:\SchoolManagementSystemAPI\SchoolManagementSystem\SchoolManagementSystemAPI.Presentation\bin\Debug\net9.0\Repository.pdb
