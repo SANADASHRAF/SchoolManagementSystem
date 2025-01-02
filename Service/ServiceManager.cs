@@ -54,7 +54,7 @@ namespace Service
             _academicYear = new Lazy<IAcademicYearService>(() => new AcademicYearService(repositoryManager, logger));
             _adminService = new Lazy<IAdminService>(() => new AdminService(repositoryManager, logger));
             _attendanceService = new Lazy<IAttendanceService>(() => new AttendanceService(repositoryManager, logger));
-            _bookService = new Lazy<IBookService>(() => new BookService(repositoryManager, logger));
+            _bookService = new Lazy<IBookService>(() => new BookService(repositoryManager, logger,mapper));
             _cityService = new Lazy<ICityService>(() => new CityService(repositoryManager, logger));
             _classScheduleService = new Lazy<IClassScheduleService>(() => new ClassScheduleService(repositoryManager, logger));
             _classService = new Lazy<IClassService>(() => new ClassService(repositoryManager, logger));

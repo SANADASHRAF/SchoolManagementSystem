@@ -41,6 +41,11 @@ namespace SchoolManagementSystemAPI
             .ForMember(dest => dest.Videos, opt => opt.MapFrom(src => src.Videos.Select(ev => ev.Video.VideoUrl)));
 
             CreateMap<EventForCreationDto, Events>();
+
+
+            //book
+            CreateMap<Book, BookDto>();
+            CreateMap<BookForCreationDto, Book>();
         }
 
     }

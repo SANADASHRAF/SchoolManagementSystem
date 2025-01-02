@@ -19,6 +19,7 @@ namespace Entities.Models
         public string BookAuther { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public bool Isdeleted { get; set; }=false;
         public DateTime? CreateDate { get; set; } = DateTime.Now;
 
         [ForeignKey(nameof(AcademicYear))]
