@@ -24,7 +24,6 @@ namespace Service.Contracts
         IHomeworkSubmissionService homeworkSubmissionService { get; }
         IImageService imageService { get; }
         ILessonService lessonService { get; }
-        ILibraryService libraryService { get; }
         IParentService parentService { get; }
         IStudentClassService studentClassService { get; }
         IStudentService studentService { get; }

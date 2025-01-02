@@ -23,8 +23,7 @@ namespace Contracts
         IHomeworkRepository Homework {  get; }   
         IHomeworkSubmissionRepository HomeworkSubmission {  get; }   
         IImageRepository Image {  get; }   
-        ILessonRepository Lesson {  get; }   
-        ILibraryRepository Library {  get; }   
+        ILessonRepository Lesson {  get; }     
         IParentRepository Parent {  get; }   
         IStudentClassRepository StudentClass {  get; }   
         IStudentRepository Student {  get; }   

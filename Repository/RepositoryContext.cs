@@ -35,7 +35,6 @@ namespace Repository
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Video> Videos { get; set; }
-        public DbSet<Library> Libraries { get; set; }
         public DbSet<Events> Events { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<AcademicYear> AcademicYears { get; set; }

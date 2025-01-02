@@ -31,7 +31,6 @@ namespace Service
         private readonly Lazy<IHomeworkSubmissionService> _homeworkSubmissionService ;
         private readonly Lazy<IImageService> _imageService ;
         private readonly Lazy<ILessonService> _lessonService;
-        private readonly Lazy<ILibraryService> _libraryService;
         private readonly Lazy<IParentService> _parentService;
         private readonly Lazy<IStudentClassService> _studentClassService;
         private readonly Lazy<IStudentExactYearService> _studentExactYearService;
@@ -68,7 +67,6 @@ namespace Service
             _homeworkSubmissionService = new Lazy<IHomeworkSubmissionService>(() => new HomeworkSubmissionService(repositoryManager, logger));
             _imageService = new Lazy<IImageService>(() => new ImageService(repositoryManager, logger, userManager));
             _lessonService = new Lazy<ILessonService>(() => new LessonService(repositoryManager, logger));
-            _libraryService = new Lazy<ILibraryService>(() => new LibraryService(repositoryManager, logger));
             _parentService = new Lazy<IParentService>(() => new ParentService(repositoryManager, logger));
             _studentClassService = new Lazy<IStudentClassService>(() => new StudentClassService(repositoryManager, logger));
             _studentExactYearService = new Lazy<IStudentExactYearService>(() => new StudentExactYearService(repositoryManager, logger));
@@ -100,7 +98,6 @@ namespace Service
         public IHomeworkSubmissionService homeworkSubmissionService => _homeworkSubmissionService.Value;
         public IImageService imageService => _imageService.Value;
         public ILessonService lessonService => _lessonService.Value;
-        public ILibraryService libraryService => _libraryService.Value;
         public IParentService parentService => _parentService.Value;
         public IStudentClassService studentClassService => _studentClassService.Value;
         public IStudentExactYearService studentExactYearService => _studentExactYearService.Value;

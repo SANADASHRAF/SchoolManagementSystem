@@ -31,7 +31,6 @@ namespace Repository
         private readonly Lazy<IHomeworkSubmissionRepository> _homeworkSubmissionRepository;
         private readonly Lazy<IImageRepository> _imageRepository;
         private readonly Lazy<ILessonRepository> _lessonRepository;
-        private readonly Lazy<ILibraryRepository> _libraryRepository;
         private readonly Lazy<IParentRepository> _parentRepository;
         private readonly Lazy<IStudentClassRepository> _studentClassRepository;
         private readonly Lazy<IStudentRepository> _studentRepository;
@@ -68,7 +67,6 @@ namespace Repository
             _homeworkSubmissionRepository = new Lazy<IHomeworkSubmissionRepository>(() => new HomeworkSubmissionRepository(_repositoryContext));
             _imageRepository = new Lazy<IImageRepository>(() => new ImageRepository(_repositoryContext));
             _lessonRepository = new Lazy<ILessonRepository>(() => new LessonRepository(_repositoryContext));
-            _libraryRepository = new Lazy<ILibraryRepository>(() => new LibraryRepository(_repositoryContext));
             _parentRepository = new Lazy<IParentRepository>(() => new ParentRepository(_repositoryContext));
             _studentClassRepository = new Lazy<IStudentClassRepository>(() => new StudentClassRepository(_repositoryContext));
             _studentRepository = new Lazy<IStudentRepository>(() => new StudentRepository(_repositoryContext));
@@ -99,7 +97,6 @@ namespace Repository
         public IHomeworkSubmissionRepository HomeworkSubmission => _homeworkSubmissionRepository.Value;
         public IImageRepository Image => _imageRepository.Value;
         public ILessonRepository Lesson => _lessonRepository.Value;
-        public ILibraryRepository Library => _libraryRepository.Value;
         public IParentRepository Parent => _parentRepository.Value;
         public IStudentClassRepository StudentClass => _studentClassRepository.Value;
         public IStudentRepository Student => _studentRepository.Value;
