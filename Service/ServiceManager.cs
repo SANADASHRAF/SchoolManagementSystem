@@ -56,7 +56,7 @@ namespace Service
             _attendanceService = new Lazy<IAttendanceService>(() => new AttendanceService(repositoryManager, logger));
             _bookService = new Lazy<IBookService>(() => new BookService(repositoryManager, logger,mapper));
             _cityService = new Lazy<ICityService>(() => new CityService(repositoryManager, logger));
-            _classScheduleService = new Lazy<IClassScheduleService>(() => new ClassScheduleService(repositoryManager, logger));
+            _classScheduleService = new Lazy<IClassScheduleService>(() => new ClassScheduleService(repositoryManager, logger,mapper));
             _classService = new Lazy<IClassService>(() => new ClassService(repositoryManager, logger));
             _departmentService = new Lazy<IDepartmentService>(() => new DepartmentService(repositoryManager, logger));
             _eventsService = new Lazy<IEventsService>(() => new EventsService(repositoryManager,mapper, logger));

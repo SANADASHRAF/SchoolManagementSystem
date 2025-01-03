@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystemAPI.Presentation.Controllers
 {
-    [Route("SchoolManagement/SubjectSpecializationController /[action]")]
+    [Route("SchoolManagement/SubjectSpecializationController/[action]")]
     [ApiController]
     public class SubjectSpecializationController : ControllerBase
     {

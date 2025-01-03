@@ -21,9 +21,11 @@ namespace Entities.Models
         public int StudentID { get; set; }
         public Student Student { get; set; }
 
-        [ForeignKey(nameof(Class))]
-        public int ClassID { get; set; }
-        public Class Class { get; set; }
+
+        [ForeignKey(nameof(Classroom))]
+        public int ClassroomID { get; set; }
+        public Classroom Classroom { get; set; }
+
 
         [ForeignKey(nameof(Year))]
         public int YearID { get; set; }

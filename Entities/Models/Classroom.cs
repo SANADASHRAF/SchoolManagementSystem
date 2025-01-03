@@ -15,6 +15,8 @@ namespace Entities.Models
 
         [ForeignKey(nameof(AcademicYear))]
         public int AcademicYearID { get; set; }
-        public AcademicYear AcademicYear { get; set; } 
+        public AcademicYear AcademicYear { get; set; }
+
+        public ICollection<StudentClass> StudentClasses { get; set; }
     }
 }
