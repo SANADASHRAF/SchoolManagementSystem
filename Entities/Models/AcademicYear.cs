@@ -29,8 +29,7 @@ namespace Entities.Models
         public ICollection<ClassSchedule>? classSchedules { get; set; }
         public ICollection<Exam>? exams { get; set; }
         public ICollection<Homework>? homeworks { get; set; }
-        public ICollection<Lesson>? lessons { get; set; }
-        public ICollection<SubjectSpecialization>? subjectSpecializations { get; set; }
+        public ICollection<Lesson>? lessons { get; set; } 
         public ICollection<StudentExactYear>? studentExactYears { get; set; }
         public ICollection<SubjectTerm>? SubjectTerms { get; set; }
 

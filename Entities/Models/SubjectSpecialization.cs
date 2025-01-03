@@ -31,13 +31,5 @@ namespace Entities.Models
         public int TeacherID { get; set; }
         public Teacher Teacher { get; set; }
 
-        [ForeignKey(nameof(AcademicYear))]
-        public int AcademicYearID { get; set; }
-        public AcademicYear AcademicYear { get; set; }
-
-        [ForeignKey(nameof(Term))]
-        public int TermID { get; set; }
-        public Term Term { get; set; }
-
     }
 }

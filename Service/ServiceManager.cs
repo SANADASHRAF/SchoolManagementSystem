@@ -70,7 +70,7 @@ namespace Service
             _parentService = new Lazy<IParentService>(() => new ParentService(repositoryManager, logger));
             _studentClassService = new Lazy<IStudentClassService>(() => new StudentClassService(repositoryManager, logger));
             _studentExactYearService = new Lazy<IStudentExactYearService>(() => new StudentExactYearService(repositoryManager, logger));
-            _subjectSpecializationService = new Lazy<ISubjectSpecializationService>(() => new SubjectSpecializationService(repositoryManager, logger));
+            _subjectSpecializationService = new Lazy<ISubjectSpecializationService>(() => new SubjectSpecializationService(repositoryManager, logger,mapper));
             _studentService = new Lazy<IStudentService>(() => new StudentService(repositoryManager, logger));
             _subjectService = new Lazy<ISubjectService>(() => new SubjectService(repositoryManager, mapper, logger));
             _superAdminService = new Lazy<ISuperAdminService>(() => new SuperAdminService(repositoryManager, logger));

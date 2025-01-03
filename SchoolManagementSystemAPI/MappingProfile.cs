@@ -46,6 +46,18 @@ namespace SchoolManagementSystemAPI
             //book
             CreateMap<Book, BookDto>();
             CreateMap<BookForCreationDto, Book>();
+
+            // SubjectSpecialization 
+            CreateMap<SubjectSpecialization, SubjectSpecializationDto>()
+                .ForMember(dest => dest.SubjectName, opt => opt.MapFrom(src => src.Subject.SubjectName))
+                .ForMember(dest => dest.TeacherName, opt => opt.MapFrom(src => src.Teacher.User.Name));
+
+            CreateMap<SubjectSpecializationForCreationDto, SubjectSpecialization>();
+
+            // TeacherSubjectDto Mapping
+            CreateMap<Teacher, TeacherSubjectDto>()
+                .ForMember(dest => dest.TeacherName, opt => opt.MapFrom(src => src.User.Name))
+                .ForMember(dest => dest.Subjects, opt => opt.MapFrom(src => src.subjectSpecializations.Select(ss => ss.Subject.SubjectName)));
         }
 
     }
