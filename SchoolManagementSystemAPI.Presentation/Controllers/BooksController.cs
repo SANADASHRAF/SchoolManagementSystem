@@ -14,7 +14,9 @@ namespace SchoolManagementSystemAPI.Presentation.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-
+        // ImageUrl = $"https://hawisports.com/wwwroot/image/" + imageFileName,
+        //@"h:\root\home\sanad01092001 - 001\www\schoolmanagment\wwwroot\image\" 
+        //http://sanad01092001-001-site1.ltempurl.com/SchoolManagement/ConstantController/GetAcademicYears
 
         private readonly IServiceManager _service;
         private readonly ILoggerManager _logger;

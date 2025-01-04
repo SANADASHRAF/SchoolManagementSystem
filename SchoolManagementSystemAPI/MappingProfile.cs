@@ -66,7 +66,14 @@ namespace SchoolManagementSystemAPI
             CreateMap<ClassSchedule, ClassScheduleDto>()
                 .ForMember(dest => dest.ClassroomName, opt => opt.MapFrom(src => src.Classroom.ClassroomName))
                 .ForMember(dest => dest.SubjectName, opt => opt.MapFrom(src => src.Subject.SubjectName))
-                .ForMember(dest => dest.TeacherName, opt => opt.MapFrom(src => src.Teacher.UserID)); 
+                .ForMember(dest => dest.TeacherName, opt => opt.MapFrom(src => src.Teacher.UserID));
+
+            //studentClass
+            CreateMap<StudentClassForCreationDto, StudentClass>();
+            CreateMap<Student, StudentDto>()
+                .ForMember(dest => dest.StudentName, opt => opt.MapFrom(src => src.User.UserName));
+
+
         }
 
     }

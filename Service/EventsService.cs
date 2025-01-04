@@ -60,7 +60,7 @@ namespace Service
           
                 var imageEntity = new Image
                 {
-                    ImageUrl = imageFileName,
+                    ImageUrl = $"https://hawisports.com/wwwroot/image/" +imageFileName,
                     imagename = Path.GetFileNameWithoutExtension(imageFileName)
                 };
 

@@ -27,7 +27,7 @@ namespace Repository
         {
             try
             {
-                string directory = @"h:\root\home\hattanfjh-001\www\hawisports\wwwroot\videos\";
+                string directory = @"h:\root\home\sanad01092001 - 001\www\schoolmanagment\wwwroot\videos\";
                CheckDirectoryExist(directory);
 
                 var path = Path.Combine(directory, fileName);

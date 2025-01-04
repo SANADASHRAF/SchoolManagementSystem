@@ -35,7 +35,7 @@ namespace Repository
         {
             try
             {
-                string directory = @"h:\root\home\hattanfjh-001\www\hawisports\wwwroot\image\";
+                string directory = @"h:\root\home\sanad01092001 - 001\www\schoolmanagment\wwwroot\image\";
                 CheckDirectoryExist(directory);
 
                 var path = Path.Combine(directory, fileName);
@@ -60,7 +60,7 @@ namespace Repository
                
                 var newImage = new Entities.Models.Image
                 {
-                    ImageUrl = imageFileName, 
+                    ImageUrl = $"https://hawisports.com/wwwroot/image/" + imageFileName, 
                     imagename = Path.GetFileNameWithoutExtension(imageFileName), 
                     CreateDate = DateTime.Now
                 };
@@ -68,7 +68,8 @@ namespace Repository
                 RepositoryContext.Images.Add(newImage);
                 await RepositoryContext.SaveChangesAsync();
 
-                // إنشاء علاقة المستخدم مع الصورة
+               
+
                 var userImage = new ApplicationUserImage
                 {
                     UserID = user.Id,
@@ -78,7 +79,7 @@ namespace Repository
 
                 RepositoryContext.applicationUserImages.Add(userImage);
                
-                // تحديث علاقة المستخدم
+               
                 user.ApplicationUserImageID = userImage.ApplicationUserImageId;
 
                 await RepositoryContext.SaveChangesAsync();
@@ -96,7 +97,7 @@ namespace Repository
             if (user.ApplicationUserImage == null)
                 return null;
 
-            var oldImagePath = Path.Combine(@"h:\root\home\hattanfjh-001\www\hawisports\wwwroot\image\", user.ApplicationUserImage.Image.ImageUrl);
+            var oldImagePath = Path.Combine(@"h:\root\home\sanad01092001 - 001\www\schoolmanagment\wwwroot\image\", user.ApplicationUserImage.Image.ImageUrl);
             if (File.Exists(oldImagePath))
             {
                 File.Delete(oldImagePath);

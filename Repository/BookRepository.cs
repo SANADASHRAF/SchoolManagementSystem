@@ -39,7 +39,8 @@ namespace Repository
         {
             try
             {
-                string directory = @"h:\root\home\hattanfjh-001\www\hawisports\wwwroot\books\";
+
+                string directory = @"h:\root\home\sanad01092001 - 001\www\schoolmanagment\wwwroot\books\";
 
                 CheckDirectoryExist(directory);
 
